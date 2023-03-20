@@ -112,7 +112,7 @@ class Ruten(Crawler):
 class Shopee(Crawler):
     def __init__(self):
         super().__init__()
-        self.TARGET = 'ruten'
+        self.TARGET = 'shopee'
         self.URL = "https://shopee.tw"
         self.API = "https://shopee.tw/api/v4"
         self.session = requests.Session()

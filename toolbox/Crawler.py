@@ -143,7 +143,7 @@ class Shopee(Crawler):
             response = self.session.get(f'{self.API}/search/search_items?by=relevancy&keyword={urllib.parse.quote(keyword)}&limit={limit}&newest={offset}&order=desc&page_type=search&scenario=PAGE_GLOBAL_SEARCH&version=2', headers=referHeaders)
 
         response = response.json()["items"]
-        datas = list()
+        datas = []
         count = 0
         for i in response:
             prod = dict()

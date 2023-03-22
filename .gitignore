@@ -1,5 +1,3 @@
 log.txt
-driver/__pycache__/*
+toolbox/__pycache__/*
 tmp/*
-test*
-*.html

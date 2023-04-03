@@ -1,0 +1,282 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v262",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_acne": [
+            "褐斑",
+            "黑斑",
+            "綠斑",
+            "紫斑",
+            "紅斑",
+            "硬斑",
+            "孕斑",
+            "橘皮組織",
+            "海綿組織",
+            "瘀斑",
+            "雀斑",
+            "粉刺",
+            "老人斑",
+            "粗大毛孔",
+            "黑眼圈"
+        ],
+        "_herb": [
+            "白胡椒",
+            "薑黃",
+            "黑胡椒"
+        ],
+        "_idiom": [
+            "更年期",
+            "爆脂率",
+            "黑色素"
+        ],
+        "_organ": [
+            "心室",
+            "心房",
+            "視神經",
+            "骨神經"
+        ],
+        "_disease": [
+            "圓禿",
+            "坐骨神經痛",
+            "濕疹",
+            "瘡",
+            "皮脂漏",
+            "皮膚炎",
+            "禿頭",
+            "肌少症",
+            "蜂窩性組織炎",
+            "退化性關節炎",
+            "雄性禿",
+            "青春痘",
+            "骨質疏鬆",
+            "暗瘡",
+            "狐臭"
+        ],
+        "_streaks": [
+            "表情紋",
+            "法令紋",
+            "魚尾紋",
+            "細紋",
+            "伸展紋"
+        ],
+        "_plasticSurgery": [
+            "整形手術",
+            "鑽石微雕",
+            "微晶瓷",
+            "微針滾輪",
+            "塑臉"
+        ]
+    },
+    "utterance": {
+        "光療": {
+            "id": "8c9a9a25-1522-422d-854d-a87b33c0dbdb",
+            "pos": "<ENTITY_oov>光療</ENTITY_oov>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(光療|電療)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "抑炎": {
+            "id": "6f318599-a4ce-4291-bfc9-f5023bfaf552",
+            "pos": "<ENTITY_oov>抑炎</ENTITY_oov>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>抑炎</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "拉提": {
+            "id": "3f048049-ea45-4e7c-a1e4-4e6adec05246",
+            "pos": "<ACTION_verb>拉提</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(拉提|普提|拉託|提納|拉佐|拉說|利提|拉納|蓋拉|拉尼|塞拉)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>拉提</(ACTION_verb|VerbP)>"
+        },
+        "換膚": {
+            "id": "0df38354-ddeb-4ae1-8354-93ff10448466",
+            "pos": "<VerbP>換膚</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(換膚|性導)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>換膚</(ACTION_verb|VerbP)>"
+        },
+        "殺菌": {
+            "id": "da2708de-95b2-4e75-8438-2e6ad73856c1",
+            "pos": "<ACTION_verb>殺菌</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(殺菌|滅菌|烘乾|抗菌|蒸煮|加水|過濾|防晒|煮沸|防腐|加熱)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(殺菌|滅菌|抗菌)</(ACTION_verb|VerbP)>"
+        },
+        "消炎": {
+            "id": "0e4b6d14-69eb-459f-b2a8-11838799f73b",
+            "pos": "<ACTION_verb>消炎</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消炎|消腫|退燒|化痰|抗菌|解毒|止痛|安眠|止癢|止咳)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>消炎</(ACTION_verb|VerbP)>"
+        },
+        "除毛": {
+            "id": "26b98ad8-c33c-483e-b438-b2f145fd37d8",
+            "pos": "<VerbP>除毛</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除毛|脫毛|愛撫|切除|勃起|穿洞|結紮|割除|刮除|性交|灌腸)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除毛|脫毛|去毛)</(ACTION_verb|VerbP)>"
+        },
+        "除痘": {
+            "id": "2874b86c-f14f-4bb3-b814-f436f8045dd2",
+            "pos": "<VerbP>除痘</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除痘|)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除|去)(痘|疤|痔|瘡|痘疤)</(ACTION_verb|VerbP)>"
+        },
+        "除皺": {
+            "id": "c090a50c-3664-4cb5-a322-597b372d289c",
+            "pos": "<VerbP>除皺</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除皺|控油|保濕|活血|化痰|除臭|抗菌|消食|消腫|除濕|養顏)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>除皺</(ACTION_verb|VerbP)>"
+        },
+        "雷射": {
+            "id": "7d18e1d0-04c3-4f98-af55-428d3c55eb6f",
+            "pos": "<ENTITY_oov>雷射</ENTITY_oov>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(雷射|鐳射)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "退紅腫": {
+            "id": "79a4d315-d766-404d-8624-0abbd9455633",
+            "pos": "<ACTION_verb>退</ACTION_verb><ACTION_verb>紅腫</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(退|給退|撤|後退|欲退|退兵|退了|撤兵|任退|退去|退到)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(紅腫|腫脹|發癢|腫痛|充血|脹痛|痠痛|酸痛|刺痛|劇痛|挫傷)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(退|除)</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>紅腫</(ACTION_verb|VerbP)>"
+        },
+        "除痘疤": {
+            "id": "a93f1854-18e2-4949-97ea-4cd65133d3e9",
+            "pos": "<ACTION_verb>除</ACTION_verb><ENTITY_nouny>痘疤</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除|除原|指除|除主|賣郎|除此)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(除|去)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>痘疤</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "修復肌膚": {
+            "id": "0a81a3c7-1854-4072-a84e-4ed8fcb3aa3c",
+            "pos": "<ACTION_verb>修復</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修復|修好|修整|修理|修繕|修葺|修補|回復|康復|復修|復原)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修復|修補|修理)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>肌膚</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "抑制發炎": {
+            "id": "a9fb69a8-35ae-43f9-b160-1b2ad60e2dc7",
+            "pos": "<ACTION_verb>抑制</ACTION_verb><ACTION_verb>發炎</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(發炎|惱怒|惹怒|招怨|招惹|挑動|挑弄|挑拔|挑逗|撩動|撩惹)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|減輕)</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>發炎</(ACTION_verb|VerbP)>"
+        },
+        "改善疾病": {
+            "id": "99d1ee70-db57-497e-9aa4-72dfc0834a12",
+            "pos": "<ACTION_verb>改善</ACTION_verb><ENTITY_noun>疾病</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|改正|改良|改造|改進|改過)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "整形手術": {
+            "id": "8c02d6f4-d3f7-40ad-8c49-9d11c10045ae",
+            "pos": "<UserDefined>整形手術</UserDefined>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "治療疾病": {
+            "id": "15eec942-c207-4938-81e3-a818059fe0c6",
+            "pos": "<ACTION_verb>治療</ACTION_verb><ENTITY_noun>疾病</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(治療|治病|治癒|療傷|療癒|療養|醫治|癒合|養傷|診治|針灸)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(治療|治癒|療癒|醫治|癒合)</(ACTION_verb|VerbP)>(.+)?"
+        },
+        "消腫止痛": {
+            "id": "798fdee0-cd8d-4a35-b883-09a7edcc42c0",
+            "pos": "<ACTION_verb>消腫</ACTION_verb><ACTION_verb>止痛</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消腫|消炎|退燒|化痰|潤肺|腫痛|止痛|活血|止癢|消食|祛風)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(止痛|消除|疏導|疏解|紓壓|紓解|緩解|化痰|解毒|安眠|助眠)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>消腫</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>止痛</(ACTION_verb|VerbP)>"
+        },
+        "減輕疾病": {
+            "id": "0325b955-deb6-447c-b816-89f1a57ea9f4",
+            "pos": "<ACTION_verb>減輕</ACTION_verb><ENTITY_noun>疾病</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(減輕|減低|減小|減少|減弱|減損|減緩|衰減|中止|取消|奪去)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(減輕|減低|減少|減弱|減損|減緩|消除|抑制)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "皺紋填補": {
+            "id": "0e902a86-6971-401d-bae0-2d6332346538",
+            "pos": "<ENTITY_oov>皺紋</ENTITY_oov><ACTION_verb>填補</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(填補|充填|填塞|填寫|填表|添補|補滿|補足|充塞|克服|征服)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>皺紋</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(填補|修復)</(ACTION_verb|VerbP)>"
+        },
+        "預防感染": {
+            "id": "080f4b92-5fb3-48f7-9960-919dc83fbcae",
+            "pos": "<ACTION_verb>預防</ACTION_verb><ACTION_verb>感染</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防備|防堵|防杜|防止|防治|防範|免除|遮斷|阻止|根治)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(感染|傳染|感化|沾染|影響|毒害|染病|確診|叮咬|咬傷|侵染)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|避免|抵抗|防止)</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>感染</(ACTION_verb|VerbP)>"
+        },
+        "預防疾病": {
+            "id": "cb00b45f-666d-4c43-b530-fea0b2c96cee",
+            "pos": "<ACTION_verb>預防</ACTION_verb><ENTITY_noun>疾病</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防備|防堵|防杜|防止|防治|防範|免除|遮斷|阻止|根治)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防備|防治|防範|免除|阻止|防止)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "平撫肌膚疤痕": {
+            "id": "d8f04141-43bb-4956-bf79-36d1e14ea989",
+            "pos": "<ACTION_verb>平撫</ACTION_verb><ENTITY_nouny>肌膚疤痕</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|安撫|平伏|平定|平復|平息|撫慰|討平|勸解|和解|團聚)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|撫平)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "平撫臉部疤痕": {
+            "id": "3bcae42f-829d-480f-964f-c6a7653505a6",
+            "pos": "<ACTION_verb>平撫</ACTION_verb><ENTITY_nouny>臉部</ENTITY_nouny><ENTITY_noun>疤痕</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|安撫|平伏|平定|平復|平息|撫慰|討平|勸解|和解|團聚)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|平伏|平定|撫平)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>疤痕</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "改善受損肌膚": {
+            "id": "8209ca6f-a836-4c71-b7e6-67b0c024721e",
+            "pos": "<ACTION_verb>改善</ACTION_verb><ACTION_verb>受損</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(受損|受傷|受害|受虐|吃虧|容忍|隱忍|進水|毀損|損毀|受創)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修復|修補|修理|改善)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(肌膚|皮膚|表皮|膚色|膚質|膚感)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "抑制潮濕所產生的黴菌": {
+            "id": "1c2ce4b2-b051-428c-a395-34c54d2d9348",
+            "pos": "<ACTION_verb>抑制</ACTION_verb><MODIFIER>潮濕</MODIFIER><FUNC_inner>所</FUNC_inner><ACTION_verb>產生</ACTION_verb><FUNC_inner>的</FUNC_inner><ENTITY_nouny>黴菌</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(產生|出產|滋生|生出|生成|生產|產出|使得|創作|創收|創造)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|限制|防止|抑止|阻抑)</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>產生</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>黴菌</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        }
+    }
+}

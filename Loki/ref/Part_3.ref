@@ -1,0 +1,636 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v262",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_acne": [
+            "黑斑",
+            "雀斑",
+            "粉刺",
+            "痘疤",
+            "老人斑",
+            "表情紋",
+            "法令紋",
+            "魚尾紋",
+            "粗大毛孔",
+            "凹洞",
+            "眼袋",
+            "黑眼圈",
+            "淚溝"
+        ],
+        "_herb": [
+            "薑黃",
+            "黑胡椒",
+            "白胡椒"
+        ],
+        "_sick": [
+            "喉嚨痛",
+            "咳嗽",
+            "氣喘",
+            "鼻塞",
+            "頭疼",
+            "頭痛",
+            "過敏",
+            "過敏性鼻炎"
+        ],
+        "_idiom": [
+            "黑色素",
+            "更年期",
+            "爆脂率",
+            "內分泌"
+        ],
+        "_organ": [
+            "視神經",
+            "心房",
+            "心室",
+            "骨神經",
+            "關節",
+            "肌肉"
+        ],
+        "_disease": [
+            "關節炎",
+            "退化性關節炎",
+            "骨質疏鬆",
+            "肌少症",
+            "坐骨神經痛"
+        ],
+        "_bacteria": [
+            "皮屑芽孢菌",
+            "細菌"
+        ],
+        "_medicalNoun": [
+            "血紅素",
+            "粒線體前列腺素",
+            "微血管",
+            "腎上腺素",
+            "人體賀爾蒙",
+            "費洛蒙",
+            "賀爾蒙",
+            "基因",
+            "血管穿透素",
+            "DNA",
+            "月經"
+        ]
+    },
+    "utterance": {
+        "利尿": {
+            "id": "bbc64dc0-9f6b-4adf-89f0-941fd5439cf4",
+            "pos": "<ENTITY_nouny>利尿</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>利尿</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "殺菌": {
+            "id": "90eac338-1f5f-4a64-91a0-163257f30267",
+            "pos": "<ACTION_verb>殺菌</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(殺菌|滅菌|烘乾|抗菌|蒸煮|加水|過濾|防晒|煮沸|防腐|加熱)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(殺菌|消毒|抗菌)</(ACTION_verb|VerbP)>"
+        },
+        "淨身": {
+            "id": "faa77376-7906-4d30-bfb4-f086615ead30",
+            "pos": "<ENTITY_nouny>淨身</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>淨身</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "潤滑": {
+            "id": "cae50fa4-c78d-4955-b02d-9ae3cd93dad2",
+            "pos": "<ACTION_verb>潤滑</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(潤滑|淬火|切削|精煉|絕緣|燒結|粘性|蓄電|防晒|冷卻|電鍍)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>潤滑</(ACTION_verb|VerbP)>"
+        },
+        "避邪": {
+            "id": "893b328d-7b84-4242-aa87-0023bc8280e7",
+            "pos": "<ACTION_verb>避邪</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(避邪|驅邪|消災|驅鬼|解厄|超渡|化痰|補血|活血|驅魔|祛風)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>避邪</(ACTION_verb|VerbP)>"
+        },
+        "消浮腫": {
+            "id": "e44b48aa-0624-4571-9ca0-ae3739fe92fe",
+            "pos": "<ACTION_verb>消</ACTION_verb><ACTION_verb>浮腫</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消|有消|消等|持消|採消|越消|過消|集電)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(浮腫|腫脹|發癢|紅腫|發黑|腫痛|痠痛|抽搐|化膿|酸痛|發紺)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>消</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>浮腫</(ACTION_verb|VerbP)>"
+        },
+        "費洛蒙": {
+            "id": "b4f4d8fc-2b4a-448a-8c88-de918478d648",
+            "pos": "<UserDefined>費洛蒙</UserDefined>",
+            "lexy": [],
+            "pattern": "<UserDefined>([^<]+)</UserDefined>"
+        },
+        "隔離PM2.5": {
+            "id": "3dccaba8-189e-4d00-bd34-a6149d9d3eeb",
+            "pos": "<ACTION_verb>隔離</ACTION_verb><ENTITY_oov>PM</ENTITY_oov><ENTITY_num>2.5</ENTITY_num>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(隔離|分隔|分離|抽離|間隔|阻隔|隔開|分割|分拆|分治|分裝)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>隔離</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>PM</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><ENTITY_num>2.5</ENTITY_num>"
+        },
+        "一次解決": {
+            "id": "7753c654-7fda-410d-bb13-82f0a2950b8f",
+            "pos": "<ACTION_eventQuantifier>一次</ACTION_eventQuantifier><ACTION_verb>解決</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(解決|分解|化解|決定|破解|解惑|解析|解謎|解開|解題|講解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<ACTION_eventQuantifier>[^<]*?</ACTION_eventQuantifier><(ACTION_verb|VerbP)>解決</(ACTION_verb|VerbP)>"
+        },
+        "保養關節": {
+            "id": "1c3921eb-55f5-498e-8a1d-154a6a834f21",
+            "pos": "<ACTION_verb>保養</ACTION_verb><ENTITY_noun>關節</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(保養|保健|保存|保持|保有|保管|保藏|養護|呵護|持守|維持)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>保養</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "修補傷口": {
+            "id": "d7eb7c2c-6e1b-45fb-b04e-243234e517a7",
+            "pos": "<ACTION_verb>修補</ACTION_verb><ENTITY_nouny>傷口</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修補|修好|修復|修改|修正|修法|修理|修繕|修葺|復修|整修)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修補|修復|修理)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "傷痕修復": {
+            "id": "7fbb3282-f974-4713-b1bd-540b9f8b8558",
+            "pos": "<ENTITY_nouny>傷痕</ENTITY_nouny><VerbP>修復</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(修復|)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(修補|修復|修理)</(ACTION_verb|VerbP)>"
+        },
+        "提振精神": {
+            "id": "12b28cff-3ab9-4166-ab5f-be11a97d8f3b",
+            "pos": "<ACTION_verb>提振</ACTION_verb><ENTITY_noun>精神</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提振|振作|振奮|振興|促求|促請|催促|力促|勸動|勸告|啟發)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提振|振奮|振作)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>精神</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "提神醒腦": {
+            "id": "48d30bc7-9d5c-415a-9024-de7adacffb5c",
+            "pos": "<ACTION_verb>提神</ACTION_verb><ACTION_verb>醒腦</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提神|梳洗|補氣|解渴|漱口|沖泡|助眠|醒腦|止癢|調味|煮成)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(醒腦|提神|止癢|止咳|補腎|化痰|潤膚|解渴|潤肺|補血|消食)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>提神</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>醒腦</(ACTION_verb|VerbP)>"
+        },
+        "瓦解脂肪": {
+            "id": "d18a05e8-ebf6-472e-9e35-352a5a16f214",
+            "pos": "<ACTION_verb>瓦解</ACTION_verb><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(瓦解|解體|崩解|覆滅|潰敗|倒臺|滅亡|崩潰|瓦解了|分崩|消亡)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>瓦解</(ACTION_verb|VerbP)>(.+)?<KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>"
+        },
+        "禁止咬甲": {
+            "id": "2559b0fc-78e7-4edb-9535-2b03af0b162f",
+            "pos": "<ACTION_verb>禁止</ACTION_verb><ACTION_verb>咬</ACTION_verb><ENTITY_measurement>甲</ENTITY_measurement>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(禁止|查禁|禁戒|禁用|禁足|防止|阻止|妨礙|攔住|絆住|緊閉)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(咬|咬死|咬傷|咬到|咬斷|抓傷|螫|咬了|吃掉|刺到|啃食)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(禁止|防止|阻止)</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>咬</(ACTION_verb|VerbP)><ENTITY_measurement>[^<]*?</ENTITY_measurement>"
+        },
+        "精力充沛": {
+            "id": "c2b5424c-a032-4497-b68f-743d8905057c",
+            "pos": "<ENTITY_noun>精力</ENTITY_noun><MODIFIER>充沛</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>精力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(MODIFIER|ModifierP)>充沛</(MODIFIER|ModifierP)>"
+        },
+        "重建肌膚": {
+            "id": "ca20ba12-6d06-4a35-a20c-236a5e0b03fe",
+            "pos": "<ACTION_verb>重建</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(重建|改建|重獲|修復|回復|尋獲|康復|恢復|整修|痊癒|翻修)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(重建|重塑|重整)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "關節靈活": {
+            "id": "7a63ee30-7454-4039-bd29-695a74624992",
+            "pos": "<ENTITY_noun>關節</ENTITY_noun><MODIFIER>靈活</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>關節</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>"
+        },
+        "防疫產品": {
+            "id": "a28b1073-f6ac-4fde-98f2-4307bcdf48cb",
+            "pos": "<ACTION_verb>防疫</ACTION_verb><ENTITY_noun>產品</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(防疫|抗疫|動保|檢疫|防災|救災|防颱|防範|防治|緝毒|防汛)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>防疫</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>產品</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "全部都消失": {
+            "id": "aa24c33e-7470-4d42-97af-4164203cf61d",
+            "pos": "<QUANTIFIER>全部</QUANTIFIER><QUANTIFIER>都</QUANTIFIER><ACTION_verb>消失</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消失|失蹤|消散|揮發|蒸發|褪色|崩解|消逝|崩壞|崩毀|浮現)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<QUANTIFIER>[^<]*?</QUANTIFIER>)?(<QUANTIFIER>[^<]*?</QUANTIFIER>)?<(ACTION_verb|VerbP)>消失</(ACTION_verb|VerbP)>"
+        },
+        "增強免疫力": {
+            "id": "1ab6f272-6eb9-4489-b2a0-7bc6f9db8a07",
+            "pos": "<ACTION_verb>增強</ACTION_verb><ENTITY_nouny>免疫力</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|加強|增兵|增加|增援|增添|增進|增長|增防|強化|擴增)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|增加|加強|強化)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "舒緩喉嚨痛": {
+            "id": "2561bd7f-45d6-4291-b8c2-fbaa0c34faef",
+            "pos": "<ACTION_verb>舒緩</ACTION_verb><UserDefined>喉嚨痛</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(舒緩|緩和|緩解|趨緩|平復|息怒|止痛|消除|減壓|疏導|疏解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(舒緩|緩和|緩解|紓解|緩解)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "舒解其痛苦": {
+            "id": "28938680-02d9-4f95-8af1-fc4794db7302",
+            "pos": "<ACTION_verb>舒解</ACTION_verb><ENTITY_pronoun>其</ENTITY_pronoun><ENTITY_nouny>痛苦</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(舒解|抒解|紓解|舒緩|舒緩了|緩解|減輕|排解|宣泄|承受著|消解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(舒解|緩解|抒解|紓解|舒緩|減輕|消解)</(ACTION_verb|VerbP)>(<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>痛苦</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "集中注意力": {
+            "id": "e99550b5-6633-4a67-9617-04f47f199d34",
+            "pos": "<ACTION_verb>集中</ACTION_verb><ENTITY_nouny>注意力</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(集中|分散|聚焦|著重|侷限|專注|聚集|分佈|分布|局限|點放)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>集中</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>注意力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "預防腸病毒": {
+            "id": "3cda14cd-f376-45f0-a4b9-849fbaa426e3",
+            "pos": "<ACTION_verb>預防</ACTION_verb><ENTITY_nouny>腸病毒</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防備|防堵|防杜|防止|防治|防範|免除|遮斷|阻止|根治)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防止|防範)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "一天解決痘疤": {
+            "id": "6443a366-2c06-447d-9db5-698f29cf03ab",
+            "pos": "<TIME_day>一天</TIME_day><ACTION_verb>解決</ACTION_verb><UserDefined>痘疤</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(解決|分解|化解|決定|破解|解惑|解析|解謎|解開|解題|講解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>解決</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "促進細胞代謝": {
+            "id": "dd381cea-515d-4072-9640-050a4c47dbee",
+            "pos": "<ACTION_verb>促進</ACTION_verb><ENTITY_nouny>細胞</ENTITY_nouny><ACTION_verb>代謝</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(代謝|排洩|蠕動|甲基化|分泌|降解|活性|轉錄|水解|增生)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>促進</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>代謝</(ACTION_verb|VerbP)>"
+        },
+        "促進細胞氧化": {
+            "id": "368718f4-cf20-468d-9b9a-2297135baa91",
+            "pos": "<ACTION_verb>促進</ACTION_verb><ENTITY_nouny>細胞</ENTITY_nouny><ACTION_verb>氧化</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(氧化|氯化|水解|催化|氫化)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>促進</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>氧化</(ACTION_verb|VerbP)>"
+        },
+        "促進肌膚再生": {
+            "id": "cc471aa2-85fe-422a-824a-335b841a4802",
+            "pos": "<ACTION_verb>促進</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny><ACTION_verb>再生</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(再生|回收|節約|活化|降解|配比|復育|再造)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|促進|增進|改進)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>再生</(ACTION_verb|VerbP)>"
+        },
+        "健全免疫機能": {
+            "id": "316139b9-56ff-4436-ad9c-58393ccb2850",
+            "pos": "<MODIFIER>健全</MODIFIER><ENTITY_nouny>免疫機</ENTITY_nouny><MODAL>能</MODAL>",
+            "lexy": [],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>免疫機</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<MODAL>[^<]*?</MODAL>)?"
+        },
+        "傷口癒合能力": {
+            "id": "84b0083c-1e9a-4286-84dd-0a8ede5d20b7",
+            "pos": "<ENTITY_oov>傷口</ENTITY_oov><ENTITY_nouny>癒合能力</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>傷口</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>癒合能力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "刺激乳腺發育": {
+            "id": "93acc398-53fb-4aac-a67f-4d1f88ef3426",
+            "pos": "<ACTION_verb>刺激</ACTION_verb><ENTITY_nouny>乳腺</ENTITY_nouny><ACTION_verb>發育</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(刺激|激勵|激怒|激憤|激發|激起|作弄|促求|促請|促進|催促)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(發育|生長|增生|癒合|排卵|退化|咀嚼|蠕動|代謝|攝食|受精)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>刺激</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>乳腺</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>發育</(ACTION_verb|VerbP)>"
+        },
+        "抑制體毛生長": {
+            "id": "f40b7dc2-d196-4bce-8e9f-8df3fa9a091e",
+            "pos": "<ACTION_verb>抑制</ACTION_verb><ENTITY_nouny>體毛</ENTITY_nouny><ACTION_verb>生長</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(生長|增長|成長|滋長|長大|培養|增加|覓食|種植|棲息|攝食)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|壓制|抑止|遏抑|遏制)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>生長</(ACTION_verb|VerbP)>"
+        },
+        "排除皮下脂肪": {
+            "id": "5662fd95-6e10-4f3f-b587-c0a2e226038c",
+            "pos": "<ACTION_verb>排除</ACTION_verb><ENTITY_nouny>皮</ENTITY_nouny><RANGE_locality>下</RANGE_locality><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(排除|削除|去除|拆除|拔除|摘除|撤除|擯除|消除|清除|滅除)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(排除|消除|去除|清除)</(ACTION_verb|VerbP)>(.+)?<KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>"
+        },
+        "攔截神經傳遞": {
+            "id": "32771f6e-9eaa-426e-87fc-1a89818f9992",
+            "pos": "<ACTION_verb>攔截</ACTION_verb><ENTITY_noun>神經</ENTITY_noun><ACTION_verb>傳遞</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(攔截|阻截|伏擊|驅離|截獲|攔阻|阻攔|砲擊|炮擊|攻擊|偷襲)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(傳遞|傳出|傳家|傳情|傳授|傳藝|傳話|傳語|傳輸|傳達|傳閱)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>攔截</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>神經</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>傳遞</(ACTION_verb|VerbP)>"
+        },
+        "改善內部體質": {
+            "id": "05f15ca1-5bb2-4128-9252-8b76842db39c",
+            "pos": "<ACTION_verb>改善</ACTION_verb><ENTITY_nouny>內部體質</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>改善</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "減少受傷細胞": {
+            "id": "dc854063-bbba-41f8-abfe-e2579502df73",
+            "pos": "<ACTION_verb>減少</ACTION_verb><ACTION_verb>受傷</ACTION_verb><ENTITY_nouny>細胞</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(減少|削減|減低|減削|減小|減弱|減損|減產|減輕|縮減|衰減)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(受傷|弄傷|打傷|砍傷|受害|受損|受虐|吃虧|容忍|隱忍|傷)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>減少</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>受傷</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>細胞</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "減少蚊蟲叮咬": {
+            "id": "43751555-1c4e-467b-a4ba-4fe9c3774661",
+            "pos": "<ACTION_verb>減少</ACTION_verb><ENTITY_nouny>蚊蟲</ENTITY_nouny><ACTION_verb>叮咬</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(減少|削減|減低|減削|減小|減弱|減損|減產|減輕|縮減|衰減)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(叮咬|咬了|咬傷|刺痛|蟄傷|咬|叮到|感染|吞食|螫傷|啃食)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(減少|減低)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(叮咬|咬傷|蟄傷)</(ACTION_verb|VerbP)>"
+        },
+        "隔離空氣汙染": {
+            "id": "97338baf-0606-4507-a8b2-1c8bf5909088",
+            "pos": "<ACTION_verb>隔離</ACTION_verb><ENTITY_nouny>空氣</ENTITY_nouny><ACTION_verb>汙染</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(隔離|分隔|分離|抽離|間隔|阻隔|隔開|分割|分拆|分治|分裝)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(汙染|污染|排放|揚塵|危害|汙染過|逸散|偷排|滋生)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>隔離</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>空氣</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>汙染</(ACTION_verb|VerbP)>"
+        },
+        "預防病菌入侵": {
+            "id": "c6c1c55a-eb91-45df-a555-d5ebb0297bd2",
+            "pos": "<ACTION_verb>預防</ACTION_verb><ENTITY_nouny>病菌</ENTITY_nouny><ACTION_verb>入侵</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防備|防堵|防杜|防止|防治|防範|免除|遮斷|阻止|根治)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(入侵|侵佔|侵入|侵害|侵擾|侵權|侵犯|侵略|侵蝕|侵襲|來襲)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(預防|防止|防範)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(入侵|侵入)</(ACTION_verb|VerbP)>"
+        },
+        "提升肌膚含氧量": {
+            "id": "5b303907-6218-4a83-8de4-a7d70a135e86",
+            "pos": "<ACTION_verb>提升</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny><ENTITY_noun>含氧量</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提升|升息|提高|增加|降低|增強|強化|提升了|下降|擴增|增進)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提升|提高|增加)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>含氧量</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "改善內分泌代謝": {
+            "id": "83f30eba-5be0-44e9-a04a-05a3f842ee9c",
+            "pos": "<ACTION_verb>改善</ACTION_verb><UserDefined>內分泌</UserDefined><ACTION_verb>代謝</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(代謝|排洩|蠕動|甲基化|分泌|降解|活性|轉錄|水解|增生)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>改善</(ACTION_verb|VerbP)>(.+)?<(ACTION_verb|VerbP)>代謝</(ACTION_verb|VerbP)>"
+        },
+        "消除皮屑芽孢菌": {
+            "id": "8a453cf8-cfc7-4786-8901-29396049b172",
+            "pos": "<ACTION_verb>消除</ACTION_verb><UserDefined>皮屑芽孢菌</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消除|削除|去除|拆除|拔除|排除|摘除|撤除|消去|消弭|消泯)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消除|去除|消去|消滅|消弭)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "進行脂肪的分解": {
+            "id": "9f90d074-f961-4cf9-a725-28837deec170",
+            "pos": "<ACTION_verb>進行</ACTION_verb><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical><FUNC_inner>的</FUNC_inner><ENTITY_nouny>分解</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|沿用|開展|通過|辦理|作出|進行了|進行過|實施|展開|完成)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|促進|增進|改進)</(ACTION_verb|VerbP)>(.+)?<KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>分解</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "任何乳房立即增大": {
+            "id": "6888ff48-5b65-4d8a-86a8-0fa2ba3fb183",
+            "pos": "<QUANTIFIER>任何</QUANTIFIER><ENTITY_nouny>乳房</ENTITY_nouny><TIME_justtime>立即</TIME_justtime><ACTION_verb>增大</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增大|增加|增補|增訂|擴增|加添|擴編|膨脹|遞減|減小|減慢)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<QUANTIFIER>[^<]*?</QUANTIFIER>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>乳房</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}<(ACTION_verb|VerbP)>增大</(ACTION_verb|VerbP)>"
+        },
+        "促進分解皮下脂肪": {
+            "id": "120cf425-f175-418c-af5d-8e56190602ae",
+            "pos": "<ACTION_verb>促進</ACTION_verb><ACTION_verb>分解</ACTION_verb><ENTITY_nouny>皮</ENTITY_nouny><RANGE_locality>下</RANGE_locality><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(分解|化解|破解|解惑|解析|解決|解謎|解開|解題|講解|開解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|促進|增進|改進)</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>分解</(ACTION_verb|VerbP)>(.+)?<KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical>"
+        },
+        "刺激胸部脂肪組織": {
+            "id": "4cf51d40-2067-4a32-b21e-2fb31525f7da",
+            "pos": "<ACTION_verb>刺激</ACTION_verb><ENTITY_nouny>胸部</ENTITY_nouny><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical><ACTION_verb>組織</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(刺激|激勵|激怒|激憤|激發|激起|作弄|促求|促請|促進|催促)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(組織|組建|編組|主辦|治喪|結社|促進|領導)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>刺激</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>胸部</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical><(ACTION_verb|VerbP)>組織</(ACTION_verb|VerbP)>"
+        },
+        "強化夫妻情感聯繫": {
+            "id": "9653548c-0ee6-444c-b830-f8678c62b5a5",
+            "pos": "<MODIFIER>強化</MODIFIER><ENTITY_noun>夫妻</ENTITY_noun><ENTITY_noun>情感</ENTITY_noun><ACTION_verb>聯繫</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(聯繫|聯想起|聯結|連繫|關聯|交往|感動|整合|會合|糾結|納入)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>情感</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>聯繫</(ACTION_verb|VerbP)>"
+        },
+        "抑制血小板的凝集": {
+            "id": "070de2c5-a2b8-4e1d-a479-86195efd23df",
+            "pos": "<ACTION_verb>抑制</ACTION_verb><ENTITY_nouny>血</ENTITY_nouny><ENTITY_nouny>小板</ENTITY_nouny><FUNC_inner>的</FUNC_inner><ENTITY_nouny>凝集</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>抑制</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>血</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>小板</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>凝集</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "排出體內多餘毒素": {
+            "id": "2b3ba4f8-8ae6-441b-8cb1-b950ba7ae2ed",
+            "pos": "<ACTION_verb>排出</ACTION_verb><ENTITY_nouny>體</ENTITY_nouny><RANGE_locality>內</RANGE_locality><ENTITY_nouny>多餘</ENTITY_nouny><ENTITY_nouny>毒素</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(排出|排入|排放|排走|交出|宣洩|擠出|流乾|給出|送出|吸入)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>排出</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>體</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><RANGE_(locality|period)>[^<]*?</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>多餘</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "排出體內多餘水分": {
+            "id": "3ca15cf3-8ad4-4a43-b9ae-4e00a076efba",
+            "pos": "<ACTION_verb>排出</ACTION_verb><ENTITY_nouny>體</ENTITY_nouny><RANGE_locality>內</RANGE_locality><ENTITY_nouny>多餘水分</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(排出|排入|排放|排走|交出|宣洩|擠出|流乾|給出|送出|吸入)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>排出</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>體</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><RANGE_(locality|period)>[^<]*?</RANGE_(locality|period)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>多餘水分</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "消除已形成之黑斑": {
+            "id": "de1d9504-fb55-49aa-8620-700c44867742",
+            "pos": "<ACTION_verb>消除</ACTION_verb><ASPECT>已</ASPECT><ACTION_verb>形成</ACTION_verb><FUNC_inner>之</FUNC_inner><UserDefined>黑斑</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(消除|削除|去除|拆除|拔除|排除|摘除|撤除|消去|消弭|消泯)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(形成|形成了|產生|構成|生成|成形|構成了|發展出|沉積|聚集成|融合成)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>消除</(ACTION_verb|VerbP)>(<ASPECT>[^<]*?</ASPECT>)?<(ACTION_verb|VerbP)>形成</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "直接到達乳房組織": {
+            "id": "6385fd1e-a01a-4a7b-85df-688c56e2ad53",
+            "pos": "<MODIFIER>直接</MODIFIER><ACTION_verb>到達</ACTION_verb><ENTITY_nouny>乳房</ENTITY_nouny><ACTION_verb>組織</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(到達|來到|到來|抵達|達到|達成|達標|到達了|跨過|駛出|越過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(組織|組建|編組|主辦|治喪|促進|領導|結社)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>到達</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>乳房</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>組織</(ACTION_verb|VerbP)>"
+        },
+        "維持陰道酸性環境": {
+            "id": "7c42ed2d-35f8-4661-89e9-67735a6743db",
+            "pos": "<ACTION_verb>維持</ACTION_verb><ENTITY_nouny>陰道</ENTITY_nouny><MODIFIER>酸性</MODIFIER><ENTITY_nounHead>環境</ENTITY_nounHead>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持|持守|持續|維繫|維護|保住|保護|保養|養護|維持著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>陰道</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>環境</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "降低懷孕生理不適": {
+            "id": "996a84a8-8e37-4b90-a3a7-8a5b0d790e22",
+            "pos": "<ACTION_verb>降低</ACTION_verb><ACTION_verb>懷孕</ACTION_verb><ENTITY_nouny>生理</ENTITY_nouny><MODIFIER>不適</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(降低|下降|低估|減低|緩降|調降|降級|降調|中止|削減|取消)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(懷孕|受孕|想出|想到|感到|懂得|瞭解|懷孕了|臨盆|喪偶|患病)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>降低</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>生理</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?"
+        },
+        "抑制巨大細胞的過敏": {
+            "id": "55ecd96a-b304-4020-9f40-9bee76cf8a7e",
+            "pos": "<ACTION_verb>抑制</ACTION_verb><MODIFIER>巨大</MODIFIER><ENTITY_nounHead>細胞</ENTITY_nounHead><FUNC_inner>的</FUNC_inner><UserDefined>過敏</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>抑制</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>過敏</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "改善過敏皮膚的體質": {
+            "id": "8f648b5f-fdc5-46cd-8345-f270852ba89a",
+            "pos": "<ACTION_verb>改善</ACTION_verb><UserDefined>過敏</UserDefined><ENTITY_oov>皮膚</ENTITY_oov><FUNC_inner>的</FUNC_inner><ENTITY_nouny>體質</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(改善|修改|批改|改正|改良|改造|改進|改過|改錯|改革|整改)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>改善</(ACTION_verb|VerbP)>(.+)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>體質</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "清除水分及脂肪屯積": {
+            "id": "dd90db16-fc26-45f6-9af7-b7e67aba330d",
+            "pos": "<ACTION_verb>清除</ACTION_verb><ENTITY_nouny>水分</ENTITY_nouny><FUNC_conjunction>及</FUNC_conjunction><KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical><ACTION_verb>屯積</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(清除|削除|排除|消除|清查|清洗|清理|清盤|清空|清算|清點)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(屯積|囤積|搜刮|賞賜了|盜鑄|摻了|收刮|掠奪了|作餡|積存|吃進)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(清除|消除|排除)</(ACTION_verb|VerbP)>(.+)?<KNOWLEDGE_chemical>脂肪</KNOWLEDGE_chemical><(ACTION_verb|VerbP)>屯積</(ACTION_verb|VerbP)>"
+        },
+        "經皮吸收血管穿透素": {
+            "id": "8a81388d-6bc6-4960-9cfe-2a9f1ac7d68f",
+            "pos": "<VerbP>經皮</VerbP><ACTION_verb>吸收</ACTION_verb><UserDefined>血管穿透素</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(經皮|穿腎|引流|抽吸|穿刺)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(吸收|吸取|吸納|加入|吃掉|吞噬|攝入|攝取|汲取|消滅|緩解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>經皮</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>吸收</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "緩解關節與肌肉疼痛": {
+            "id": "017da950-25f7-4f88-8474-7fe5f50836bb",
+            "pos": "<ACTION_verb>緩解</ACTION_verb><ENTITY_noun>關節</ENTITY_noun><FUNC_conjunction>與</FUNC_conjunction><ENTITY_nouny>肌肉</ENTITY_nouny><ENTITY_oov>疼痛</ENTITY_oov>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(緩解|減緩|疏解|紓解|緩和|舒緩|趨緩|互助|協助|協辦|吞噬)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(舒緩|緩和|緩解|紓解|緩解)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)痛</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "促進內分泌與造血功能": {
+            "id": "95c40d6a-0040-47e3-8084-4f4cae12e645",
+            "pos": "<ACTION_verb>促進</ACTION_verb><UserDefined>內分泌</UserDefined><FUNC_conjunction>與</FUNC_conjunction><ACTION_verb>造</ACTION_verb><ENTITY_nouny>血功能</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(造|假造|捏造|編造|瞎編|雕|造屋|造了|鑄|侵造|造業)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>促進</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>內分泌</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "促進體內乳腺細胞活化": {
+            "id": "ded9214a-3120-465d-84ea-279830d7a55e",
+            "pos": "<ACTION_verb>促進</ACTION_verb><ENTITY_nouny>體</ENTITY_nouny><RANGE_locality>內</RANGE_locality><ENTITY_oov>乳腺細胞</ENTITY_oov><ACTION_verb>活化</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(促進|促使|促銷|增進|改進|進步|修補|推動|提倡|整修|整改)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(活化|復育|閒置|修復|再造|整建|增殖|重建|降解|活絡|分解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進行|促進|增進|改進)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?細胞</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(活化|活絡|增殖)</(ACTION_verb|VerbP)>"
+        },
+        "維持陰道環境 PH 值正常": {
+            "id": "4c3cc155-9839-4a2a-8074-99975f0f3136",
+            "pos": "<ACTION_verb>維持</ACTION_verb><MODIFIER>陰</MODIFIER><ENTITY_nounHead>道環境</ENTITY_nounHead><ENTITY_oov> PH </ENTITY_oov><ENTITY_nounHead>值</ENTITY_nounHead><MODIFIER>正常</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持|持守|持續|維繫|維護|保住|保護|保養|養護|保有)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持)</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>道環境</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))> PH </(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>值</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?"
+        },
+        "加強表皮細胞的再生能力": {
+            "id": "634d9a6b-ab4d-4423-adae-18e58f2c0b52",
+            "pos": "<ACTION_verb>加強</ACTION_verb><ENTITY_nounHead>表皮細胞</ENTITY_nounHead><FUNC_inner>的</FUNC_inner><ENTITY_nouny>再生能力</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(加強|加劇|加勁|加固|加大|加派|加添|加重|增加|增強|強化)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>加強</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)細胞</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>再生能力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "安撫躁進或心情不穩的脾氣": {
+            "id": "22250457-33f2-46df-8c38-73ddf9be8c96",
+            "pos": "<ACTION_verb>安撫</ACTION_verb><ACTION_verb>躁進</ACTION_verb><FUNC_conjunction>或</FUNC_conjunction><ENTITY_nouny>心情</ENTITY_nouny><MODIFIER>不穩</MODIFIER><FUNC_inner>的</FUNC_inner><ENTITY_nouny>脾氣</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(安撫|平撫|撫慰|勸解|和解|團聚|壓住|平伏|平復|息怒|慰藉)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(躁進|姑息|輕率|懈怠|擾民|死板|護短|怕苦|輕敵|獨斷|怕死)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>安撫</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>躁進</(ACTION_verb|VerbP)><FUNC_conjunction>[^<]*?</FUNC_conjunction><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>心情</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>脾氣</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "對於呼吸、聽覺系統有助益": {
+            "id": "131c7807-2a57-4b15-9cef-8cdd51286af0",
+            "pos": "<FUNC_inner>對於</FUNC_inner><ACTION_verb>呼吸</ACTION_verb><ENTITY_oov>聽覺</ENTITY_oov><ENTITY_noun>系統</ENTITY_noun><ACTION_verb>有</ACTION_verb><ENTITY_nouny>助益</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(呼吸|吸入|吸進|呼出|呼氣|排洩|打鼾|吞嚥|插管|缺氧|咳嗽)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>([^<]+)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>系統</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>助益</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "加強肌膚表層細胞再生之機能": {
+            "id": "82b7aeac-35ab-4551-a269-5d50b6752be4",
+            "pos": "<ACTION_verb>加強</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny><ENTITY_nouny>表層</ENTITY_nouny><ENTITY_nouny>細胞</ENTITY_nouny><ACTION_verb>再生</ACTION_verb><FUNC_inner>之</FUNC_inner><ENTITY_nouny>機</ENTITY_nouny><MODAL>能</MODAL>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(加強|加劇|加勁|加固|加大|加派|加添|加重|增加|增強|強化)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(再生|回收|節約|活化|降解|配比|復育|再造)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>加強</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?細胞</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>再生</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>機</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<MODAL>[^<]*?</MODAL>)?"
+        }
+    }
+}

@@ -1,0 +1,449 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v262",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_acne": [
+            "黑斑",
+            "雀斑",
+            "粉刺",
+            "痘疤",
+            "老人斑",
+            "表情紋",
+            "法令紋",
+            "魚尾紋",
+            "粗大毛孔",
+            "凹洞",
+            "眼袋",
+            "黑眼圈",
+            "淚溝"
+        ],
+        "_herb": [
+            "薑黃",
+            "薑黃素",
+            "黑胡椒",
+            "白胡椒"
+        ],
+        "_sick": [
+            "喉嚨痛",
+            "咳嗽",
+            "氣喘",
+            "鼻塞",
+            "頭疼",
+            "頭痛",
+            "過敏",
+            "過敏性鼻炎"
+        ],
+        "_idiom": [
+            "黑色素",
+            "更年期",
+            "爆脂率",
+            "內分泌",
+            "幹細胞",
+            "公信力"
+        ],
+        "_organ": [
+            "視神經",
+            "心房",
+            "心室",
+            "骨神經",
+            "關節",
+            "肌肉"
+        ],
+        "_disease": [
+            "關節炎",
+            "退化性關節炎",
+            "骨質疏鬆",
+            "肌少症",
+            "坐骨神經痛"
+        ],
+        "_bacteria": [
+            "皮屑芽孢菌",
+            "細菌"
+        ],
+        "_pollution": [
+            "PM2.5",
+            "PM10"
+        ],
+        "_badMaterial": [
+            "重金屬",
+            "塑化劑",
+            "化學藥品"
+        ],
+        "_medicalNoun": [
+            "血紅素",
+            "粒線體前列腺素",
+            "微血管",
+            "腎上腺素",
+            "人體賀爾蒙",
+            "費洛蒙",
+            "賀爾蒙",
+            "基因",
+            "血管穿透素",
+            "DNA",
+            "月經"
+        ],
+        "_goodMaterial": [
+            "植物性膠原蛋白",
+            "胎盤素"
+        ]
+    },
+    "utterance": {
+        "任何": {
+            "id": "929c413a-18c9-40b5-b87c-290b49e3125f",
+            "pos": "<QUANTIFIER>任何</QUANTIFIER>",
+            "lexy": [],
+            "pattern": "<QUANTIFIER>任何</QUANTIFIER>"
+        },
+        "取自": {
+            "id": "07442f6d-26ae-4fe0-94f4-e8f6308a6b0e",
+            "pos": "<ACTION_verb>取</ACTION_verb><FUNC_inner>自</FUNC_inner>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(取|取來|取得|取捨|選取|任選|拿來|挑選|遴選|選用|脫胎)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)((<(ACTION_verb|VerbP)>取</(ACTION_verb|VerbP)><FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)|(<FUNC_in(ner|ter)>來自</FUNC_in(ner|ter)>)|(<ACTION_verb>源自</ACTION_verb>))"
+        },
+        "抗汗": {
+            "id": "88268eee-ec16-402c-a8f4-e3ce37168da8",
+            "pos": "<VerbP>抗汗</VerbP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抗汗|)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[防抗][汗油]</(ACTION_verb|VerbP)>"
+        },
+        "曬白": {
+            "id": "f89c170a-ac2f-4a2d-a1c1-526f9f9a2d4d",
+            "pos": "<ACTION_verb>曬</ACTION_verb><MODIFIER_color>白</MODIFIER_color>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(曬|晒|曬到|洗過|晒到|曝晒|曝曬|落山|昇起|曬得|洗臉)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>曬</(ACTION_verb|VerbP)><MODIFIER_color>白</MODIFIER_color>"
+        },
+        "無害": {
+            "id": "f606bee7-9a6e-4db0-ab3e-0b829c443561",
+            "pos": "<MODIFIER>無害</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(MODIFIER|ModifierP)>無害</(MODIFIER|ModifierP)>"
+        },
+        "防水": {
+            "id": "c3da7e75-7b84-4f8d-aed8-8a87a4ef425d",
+            "pos": "<ACTION_verb>防水</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(防水|抗水|遮陽|隔音|保溫|防寒|排汗|防塵|防潮|透氣|防漏)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>防水</(ACTION_verb|VerbP)>"
+        },
+        "不曬黑": {
+            "id": "aafb6a35-7681-4505-9cc4-aaa24c0bf0db",
+            "pos": "<FUNC_negation>不</FUNC_negation><ACTION_verb>曬黑</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(曬黑|發胖|藏汙|乾痛|留疤|摸起來|晒傷|晒黑|晒成|剝出|受寒)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>曬[黑傷]</(ACTION_verb|VerbP)>"
+        },
+        "抗汗水": {
+            "id": "fd9d8b6a-d156-4c43-931a-22870d33f90b",
+            "pos": "<ACTION_verb>抗</ACTION_verb><ENTITY_nouny>汗水</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抗|抗拒|抗擊|抗衡|拼爭|抗菌|有抗|止痛|抗體|致敏|素抗)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[抗防]</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>汗水</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "曬不黑": {
+            "id": "8f32b09a-50a5-4efe-b2a4-4d8a62465e03",
+            "pos": "<ACTION_verb>曬</ACTION_verb><FUNC_negation>不</FUNC_negation><MODIFIER_color>黑</MODIFIER_color>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(曬|晒|曬到|洗過|晒到|曝晒|曝曬|落山|昇起|曬得|洗臉)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>曬</(ACTION_verb|VerbP)><FUNC_negation>[^<]*?</FUNC_negation>((<MODIFIER_color>黑</MODIFIER_color>)|((<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?))"
+        },
+        "100％天然": {
+            "id": "00ef1bae-c525-4ae5-9a26-51ea924d4141",
+            "pos": "<ENTITY_measurement>100％</ENTITY_measurement><MODIFIER>天然</MODIFIER>",
+            "lexy": [],
+            "pattern": "<ENTITY_measurement>[^<]*?</ENTITY_measurement><(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>"
+        },
+        "安全性高": {
+            "id": "8a2a98a4-68c3-4da8-a6b0-4d475fbfb44b",
+            "pos": "<MODIFIER>安全</MODIFIER><MODIFIER>性</MODIFIER><MODIFIER>高</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)><(MODIFIER|ModifierP)>[性度]</(MODIFIER|ModifierP)><(MODIFIER|ModifierP)>高</(MODIFIER|ModifierP)>"
+        },
+        "拉提肌膚": {
+            "id": "0c24dbe5-059e-4fe4-bfc2-bb05d5925de3",
+            "pos": "<ACTION_verb>拉提</ACTION_verb><ENTITY_nouny>肌膚</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(拉提|普提|拉託|提納|拉佐|拉說|利提|拉納|蓋拉|拉尼|塞拉)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>拉提</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>肌膚</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "環保無毒": {
+            "id": "6cf75ce9-6073-4fcc-be5c-6fb466f9ad9a",
+            "pos": "<ENTITY_oov>環保</ENTITY_oov><FUNC_negation>無</FUNC_negation><ENTITY_noun>毒</ENTITY_noun>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>環保</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><FUNC_negation>[^<]*?</FUNC_negation><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "絕對安全": {
+            "id": "33649703-62cb-474c-bf78-cb6369439cea",
+            "pos": "<MODIFIER>絕對</MODIFIER><MODIFIER>安全</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(MODIFIER|ModifierP)>絕對</(MODIFIER|ModifierP)><(MODIFIER|ModifierP)>安全</(MODIFIER|ModifierP)>"
+        },
+        "自動偵測": {
+            "id": "b28fdaaf-2e6d-4756-8d67-62ce368a1903",
+            "pos": "<MODIFIER>自動</MODIFIER><ACTION_verb>偵測</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(偵測|偵查|測知|嗅覺|察覺|感到|感知|感覺|感覺到|拆穿|揭發)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)><(ACTION_verb|VerbP)>偵測</(ACTION_verb|VerbP)>"
+        },
+        "不含重金屬": {
+            "id": "edde80d0-daa8-421a-89cc-96292292d6ce",
+            "pos": "<FUNC_negation>不</FUNC_negation><ACTION_verb>含</ACTION_verb><UserDefined>重金屬</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(含|內含|包含|含有|含蘊|蘊含|包藏|容納|蘊藏|酸等|含了)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>含</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "據研究分析": {
+            "id": "5ad72687-2a37-443f-8869-0493d2929865",
+            "pos": "<ACTION_verb>據</ACTION_verb><ACTION_verb>研究</ACTION_verb><ACTION_verb>分析</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(據|根據|引述|依據|據為|援引|據當|據財|據等|否認了|引據)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(研究|研析|研發|研習|分析|探討|實驗|探究)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(分析|剖析|研析|解析|判讀|剖視|化驗|評估|研究|建模|探討)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>據</(ACTION_verb|VerbP)>(.+)?<(ACTION_verb|VerbP)>研究</(ACTION_verb|VerbP)>(<(ACTION_verb|VerbP)>分析</(ACTION_verb|VerbP)>)?"
+        },
+        "最有公信力": {
+            "id": "896ff969-11f3-45c3-b7ef-e735131d91fe",
+            "pos": "<MODIFIER>最</MODIFIER><ACTION_verb>有</ACTION_verb><UserDefined>公信力</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>公信力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "無不良反應": {
+            "id": "6054026d-ecad-4e43-b3a5-017c1bda3c21",
+            "pos": "<FUNC_negation>無</FUNC_negation><MODIFIER>不良</MODIFIER><ACTION_verb>反應</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(反應|回應|作答|回信|回復|回答|熔鹽|催化|縮合|親核|親電)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation>(<(MODIFIER|ModifierP)>不[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>反應</(ACTION_verb|VerbP)>"
+        },
+        "無後顧之憂": {
+            "id": "b8a1b4fe-82fb-4166-b01b-82d37c6069ff",
+            "pos": "<FUNC_negation>無</FUNC_negation><RANGE_locality>後</RANGE_locality><ACTION_verb>顧</ACTION_verb><FUNC_inner>之</FUNC_inner><ENTITY_nouny>憂</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(顧|照顧|伴隨|侍奉|傾聽|參加|定期去|照看|監聽|看護|細聽)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation><RANGE_(locality|period)>[^<]*?</RANGE_(locality|period)><(ACTION_verb|VerbP)>顧</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>憂</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "皆無副作用": {
+            "id": "13a0a197-b720-45cf-ae45-0945223a2f87",
+            "pos": "<QUANTIFIER>皆</QUANTIFIER><FUNC_negation>無</FUNC_negation><MODIFIER>副</MODIFIER><ACTION_verb>作用</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(作用|活性|代謝|反應)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<QUANTIFIER>[^<]*?</QUANTIFIER>)?<FUNC_negation>[^<]*?</FUNC_negation>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>作用</(ACTION_verb|VerbP)>"
+        },
+        "經科學證實": {
+            "id": "087a6282-1844-4edc-bbae-8099a9106bab",
+            "pos": "<ACTION_verb>經</ACTION_verb><ENTITY_noun>科學</ENTITY_noun><ACTION_verb>證實</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(經|經受|經歷|後經|經第|經荔|經由|經專家|經呈|經富|經此)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(證實|佐證|印證|查證|核實|考證|認證|論證|證明|驗證|報關)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>經</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>科學</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<(ACTION_verb|VerbP)>證實</(ACTION_verb|VerbP)>)?"
+        },
+        "不易引起過敏": {
+            "id": "c9a91f5b-a31c-4d1a-9d75-48a40f1e76ba",
+            "pos": "<MODIFIER>不易</MODIFIER><ACTION_verb>引起</ACTION_verb><UserDefined>過敏</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(引起|吸引|引導|引爆|引發|引路|引領|招引|使得|促求|促請)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>引起</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>過敏</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "以誠信做保證": {
+            "id": "f30803b5-f812-4d1b-a262-5d30c400cf1f",
+            "pos": "<FUNC_inner>以</FUNC_inner><ENTITY_nouny>誠信</ENTITY_nouny><ACTION_verb>做</ACTION_verb><ACTION_verb>保證</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(做|作用|假作|假裝|冒充|創作|創造|喬裝|孕育|攝製|生出)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(保證|保修|保固|保管|保障|力保|擔保|確保|宣示|昭示|確信)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>做</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>保證</(ACTION_verb|VerbP)>"
+        },
+        "低過敏的配方": {
+            "id": "5b289e8a-fee1-49db-ba3e-119dc3bcc5ca",
+            "pos": "<MODIFIER>低</MODIFIER><UserDefined>過敏</UserDefined><FUNC_inner>的</FUNC_inner><ENTITY_nouny>配方</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>過敏</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>配方</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "源自女體好菌": {
+            "id": "2c0ee7ff-0cc9-4bf6-8f22-3ede2d53a30e",
+            "pos": "<ACTION_verb>源自</ACTION_verb><ENTITY_nouny>女體</ENTITY_nouny><ENTITY_nouny>好菌</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(源自|源起|發源|發端|始於|專指|早見|參考了|參照了|脫胎|借用了)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>源自</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?體</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>好菌</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "為○○○原液": {
+            "id": "75d25967-ad69-4669-b7b2-1b742a70b878",
+            "pos": "<AUX>為</AUX><ENTITY_nouny>○○</ENTITY_nouny><ENTITY_nouny>○</ENTITY_nouny><ENTITY_nouny>原液</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>原液</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "瑞士原裝進口": {
+            "id": "5cb0c7a7-67d6-4964-be2b-d99c712ad53b",
+            "pos": "<LOCATION>瑞士</LOCATION><MODIFIER>原裝</MODIFIER><ACTION_verb>進口</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(進口|傳入|入關|導入|押送|搬運|搭載|販運|輸入|輸送|輸運)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<LOCATION>([^<]+)</LOCATION>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>進口</(ACTION_verb|VerbP)>"
+        },
+        "不影響胎兒健康": {
+            "id": "5572ec13-b436-44d6-a66d-51e6032cc09d",
+            "pos": "<FUNC_negation>不</FUNC_negation><ACTION_verb>影響</ACTION_verb><ENTITY_pronoun>胎兒</ENTITY_pronoun><ENTITY_noun>健康</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(影響|作弄|取笑|喧擾|嘲弄|困擾|干擾|弄亂|弄混|感動|感召)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>影響</(ACTION_verb|VerbP)>(<ENTITY_pronoun>[^<]*?</ENTITY_pronoun>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>健康</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "不必擔心副作用": {
+            "id": "441536aa-7c40-4187-8d84-e0a5b2465ac6",
+            "pos": "<FUNC_negation>不</FUNC_negation><MODAL>必</MODAL><ACTION_verb>擔心</ACTION_verb><MODIFIER>副</MODIFIER><ACTION_verb>作用</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(擔心|傷心|勞心|掛心|提心|操心|擔憂|擔驚|費心|受怕|哀痛)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(作用|活性|代謝|反應)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation>(<MODAL>[^<]*?</MODAL>)?<(ACTION_verb|VerbP)>擔心</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(ACTION_verb|VerbP)>作用</(ACTION_verb|VerbP)>"
+        },
+        "具有百分之百的": {
+            "id": "95a845a2-382f-442a-889e-e7fa6b193d9e",
+            "pos": "<ACTION_verb>具有</ACTION_verb><ENTITY_measurement>百分之百</ENTITY_measurement><FUNC_inner>的</FUNC_inner>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(具有|具備|兼具|兼有|存有|帶有|懷有|持有|擁有|有了|有著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>具有</(ACTION_verb|VerbP)><ENTITY_measurement>[^<]*?</ENTITY_measurement>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?"
+        },
+        "哺乳前不需清洗": {
+            "id": "64742779-24c8-4f4e-8bed-a0af4ae0eae7",
+            "pos": "<ACTION_verb>哺乳</ACTION_verb><RANGE_locality>前</RANGE_locality><FUNC_negation>不</FUNC_negation><ACTION_verb>需</ACTION_verb><ACTION_verb>清洗</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(哺乳|看護|調養|爬行|獵食|反芻|捕食|交配|攝食|繁殖|餵養)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(需|需要|想拿|想要|想買|需約|需經過|需另|要|允許|需預)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(清洗|擦洗|沖洗|洗手|洗淨|洗滌|洗漱|洗濯|洗碗|洗脫|洗臉)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>[^<]+</(ACTION_verb|VerbP)><RANGE_(locality|period)>[^<]*?</RANGE_(locality|period)><FUNC_negation>[^<]*?</FUNC_negation><(ACTION_verb|VerbP)>需</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>清洗</(ACTION_verb|VerbP)>"
+        },
+        "智慧型○○成分": {
+            "id": "eee47355-a090-4839-b567-9ddc804ee830",
+            "pos": "<ENTITY_nouny>智慧型</ENTITY_nouny><ENTITY_oov>○○</ENTITY_oov><ENTITY_noun>成分</ENTITY_noun>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>智慧型</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>成分</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "不必擔心使用錯誤": {
+            "id": "fae2bc96-b492-49ab-a79f-3dc1e80cac7c",
+            "pos": "<FUNC_negation>不</FUNC_negation><MODAL>必</MODAL><ACTION_verb>擔心</ACTION_verb><ACTION_verb>使用</ACTION_verb><ENTITY_nouny>錯誤</ENTITY_nouny>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(擔心|傷心|勞心|掛心|提心|操心|擔憂|擔驚|費心|受怕|哀痛)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(使用|利用|動用|應用|採用|施用|沿用|活用|運用|假借|憑靠)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<FUNC_negation>[^<]*?</FUNC_negation>(<MODAL>[^<]*?</MODAL>)?<(ACTION_verb|VerbP)>擔心</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>使用</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>錯誤</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "可使肌膚向上提升": {
+            "id": "2f65d5eb-16d6-44f9-b7c2-a8f97f3021c1",
+            "pos": "<MODAL>可</MODAL><ACTION_lightVerb>使</ACTION_lightVerb><ENTITY_nouny>肌膚</ENTITY_nouny><FUNC_inner>向</FUNC_inner><RANGE_locality>上</RANGE_locality><ACTION_verb>提升</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(提升|升息|提高|增加|降低|增強|強化|提升了|下降|擴增|增進)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<MODAL>[^<]*?</MODAL>)?<ACTION_lightVerb>[^<]*?</ACTION_lightVerb><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>肌膚</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<RANGE_(locality|period)>[^<]*?</RANGE_(locality|period)><(ACTION_verb|VerbP)>提升</(ACTION_verb|VerbP)>"
+        },
+        "無與倫比的安全性": {
+            "id": "564f2727-fa49-48f0-8293-40abe4b43987",
+            "pos": "<IDIOM>無與倫比</IDIOM><FUNC_inner>的</FUNC_inner><MODIFIER>安全</MODIFIER><MODIFIER>性</MODIFIER>",
+            "lexy": [],
+            "pattern": "(<IDIOM>無與倫比</IDIOM>)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?(<(MODIFIER|ModifierP)>安全</(MODIFIER|ModifierP)>)?(<(MODIFIER|ModifierP)>[性度]</(MODIFIER|ModifierP)>)?"
+        },
+        "經衛生福利部認證": {
+            "id": "471034ae-0ed3-4aa4-9873-7aa1bc09f8e6",
+            "pos": "<ACTION_verb>經</ACTION_verb><MODIFIER>衛生</MODIFIER><ENTITY_nouny>福利部</ENTITY_nouny><ACTION_verb>認證</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(經|經受|經歷|經第|後經|經總|經專家|經此|經過|經由|經呈)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(認證|確認|認可|認同|認明|證實|證明|驗證|允准|准予|批准)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>經</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?(.+)?<(ACTION_verb|VerbP)>(認證|核可|審核)</(ACTION_verb|VerbP)>"
+        },
+        "12 小時高效 UV 防護": {
+            "id": "22994221-2947-4b56-9363-1ea5740c025f",
+            "pos": "<TIME_justtime>12 小時</TIME_justtime><MODIFIER>高效</MODIFIER><ENTITY_oov> UV </ENTITY_oov><ACTION_verb>防護</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(防護|保護|守護|維護|護著|護衛|防備|防守|防禦|防衛|值守)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>防護</(ACTION_verb|VerbP)>"
+        },
+        "產品經○○檢驗合格": {
+            "id": "3ab52239-1028-4ac4-9186-ab7451ada51c",
+            "pos": "<ENTITY_noun>產品</ENTITY_noun><ACTION_verb>經</ACTION_verb><ENTITY_nouny>○○</ENTITY_nouny><ACTION_verb>檢驗</ACTION_verb><ACTION_verb>合格</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(經|經受|經歷|後經|經第|經荔|經由|經專家|經呈|經富|經此)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(檢驗|實驗|檢察|檢查|檢測|檢索|檢視|檢閱|測驗|考驗|試驗)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(合格|適任|達標|抽檢|化驗|抽驗|續聘|認證|檢驗|占缺|符)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>產品</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>經</(ACTION_verb|VerbP)>(.+)?<(ACTION_verb|VerbP)>檢驗</(ACTION_verb|VerbP)><(ACTION_verb|VerbP)>合格</(ACTION_verb|VerbP)>"
+        },
+        "透過幹細胞萃取技術": {
+            "id": "e8353e29-8910-4e38-8343-1c40a7ec8db4",
+            "pos": "<ACTION_verb>透過</ACTION_verb><UserDefined>幹細胞</UserDefined><ACTION_verb>萃取</ACTION_verb><ENTITY_noun>技術</ENTITY_noun>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(透過|利用|經由|藉由|藉助|藉著|依靠|藉此|靠|藉|通過)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(萃取|提煉|製取|分餾|提取|製備|提純|蒸餾|研磨|配製|降解)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>透過</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>萃取</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>技術</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "保濕度可維持 24 小時": {
+            "id": "9e125fb5-0636-447a-9adc-729250ded370",
+            "pos": "<ENTITY_nouny>保濕度</ENTITY_nouny><MODAL>可</MODAL><ACTION_verb>維持</ACTION_verb><TIME_justtime>24 小時</TIME_justtime>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持|持守|持續|維繫|維護|保住|保護|保養|養護|維持著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]+</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<MODAL>[^<]*?</MODAL>)?<(ACTION_verb|VerbP)>維持</(ACTION_verb|VerbP)>(<TIME_(holiday|justtime|day|week|month|season|year|decade)>[^<]*?</TIME_(holiday|justtime|day|week|month|season|year|decade)>){1,10}"
+        },
+        "任何使用方法皆很安全": {
+            "id": "004e0dd6-1d5c-43a6-a273-9ba9c1392d45",
+            "pos": "<QUANTIFIER>任何</QUANTIFIER><ACTION_verb>使用</ACTION_verb><ENTITY_noun>方法</ENTITY_noun><QUANTIFIER>皆</QUANTIFIER><DegreeP>很安全</DegreeP>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(使用|利用|動用|應用|採用|施用|沿用|活用|運用|假借|憑靠)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(<QUANTIFIER>[^<]*?</QUANTIFIER>)?<(ACTION_verb|VerbP)>使用</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>方法</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(<QUANTIFIER>[^<]*?</QUANTIFIER>)?<DegreeP>很安全</DegreeP>"
+        },
+        "根據最新醫學文獻指出": {
+            "id": "85120586-3805-41ea-aa4c-10c453fada8a",
+            "pos": "<ENTITY_oov>根據</ENTITY_oov><DegreeP>最新</DegreeP><ENTITY_nounHead>醫學文獻</ENTITY_nounHead><ACTION_verb>指出</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(指出|指到|指向|指引|指明|指正|指示|指點|展出|展示|提示)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>根據</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(.+)?<(ACTION_verb|VerbP)>指出</(ACTION_verb|VerbP)>"
+        },
+        "具有植物性膠原蛋白/胎盤素": {
+            "id": "c97bd51e-7645-43d2-8050-454ac52e5e4e",
+            "pos": "<ACTION_verb>具有</ACTION_verb><UserDefined>植物性膠原蛋白</UserDefined><UserDefined>胎盤素</UserDefined>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(具有|具備|兼具|兼有|存有|帶有|懷有|持有|擁有|有了|有著)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(含有|內含|包含|具有)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>([^<]+)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "產品符合○國○○機構公布標準": {
+            "id": "88bfecbb-f5fd-42b2-92f3-4d9fdd2aa1c6",
+            "pos": "<ENTITY_noun>產品</ENTITY_noun><ACTION_verb>符合</ACTION_verb><ENTITY_nouny>○</ENTITY_nouny><ENTITY_nouny>國○</ENTITY_nouny><ENTITY_nouny>○機構</ENTITY_nouny><ACTION_verb>公布</ACTION_verb><MODIFIER>標準</MODIFIER>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(符合|切合|合意|吻合|整合|相符|適合|配合|一致|匹配|協調)</(ACTION_verb|VerbP)>",
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(公布|公佈|發布|出爐|公佈了|公布了|公告|揭曉|發佈|宣布|發表)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>產品</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>符合</(ACTION_verb|VerbP)>"
+        }
+    }
+}

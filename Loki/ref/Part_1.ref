@@ -62,7 +62,8 @@
             "心室",
             "心房",
             "視神經",
-            "骨神經"
+            "骨神經",
+            "淋巴"
         ],
         "_disease": [
             "圓禿",
@@ -169,7 +170,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(換膚|性導)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>換膚</(ACTION_verb|VerbP)>"
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>換[膚皮]</(ACTION_verb|VerbP)>"
         },
         "殺菌": {
             "id": "da2708de-95b2-4e75-8438-2e6ad73856c1",
@@ -314,12 +315,6 @@
             ],
             "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>放鬆</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>肌肉</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
-        "整形手術": {
-            "id": "8c02d6f4-d3f7-40ad-8c49-9d11c10045ae",
-            "pos": "<UserDefined>整形手術</UserDefined>",
-            "lexy": [],
-            "pattern": "<(UserDefined)>[^<]*?</(UserDefined)>"
-        },
         "治療疾病": {
             "id": "15eec942-c207-4938-81e3-a818059fe0c6",
             "pos": "<ACTION_verb>治療</ACTION_verb><ENTITY_noun>疾病</ENTITY_noun>",
@@ -372,7 +367,7 @@
             "id": "d18283fa-b8e9-4426-bf9e-f1807ef4a149",
             "pos": "<MODIFIER>芳香</MODIFIER><ENTITY_nounHead>療法</ENTITY_nounHead>",
             "lexy": [],
-            "pattern": "<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>療[法程]</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+            "pattern": "(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>療[法程]</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
         "預防感染": {
             "id": "080f4b92-5fb3-48f7-9960-919dc83fbcae",
@@ -415,7 +410,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|加強|增兵|增加|增援|增添|增進|增長|增防|強化|擴增)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|加強|增加|增添|增進|增長|強化)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(抵抗力|防護力|自體防禦力|防護能力)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|加強|增加|增添|增進|增長|強化)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
         "強化微血管": {
             "id": "7684cd2d-2487-48e5-91c7-975e66b0cb62",
@@ -440,14 +435,6 @@
             ],
             "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增強|加強|增加|增添|增進|增長|強化)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>淋巴</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
-        "平撫肌膚疤痕": {
-            "id": "d8f04141-43bb-4956-bf79-36d1e14ea989",
-            "pos": "<ACTION_verb>平撫</ACTION_verb><ENTITY_nouny>肌膚疤痕</ENTITY_nouny>",
-            "lexy": [
-                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|安撫|平伏|平定|平復|平息|撫慰|討平|勸解|和解|團聚)</(ACTION_verb|VerbP)>"
-            ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(平撫|撫平)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>[^<]*?</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
-        },
         "平撫臉部疤痕": {
             "id": "3bcae42f-829d-480f-964f-c6a7653505a6",
             "pos": "<ACTION_verb>平撫</ACTION_verb><ENTITY_nouny>臉部</ENTITY_nouny><ENTITY_noun>疤痕</ENTITY_noun>",
@@ -471,15 +458,7 @@
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(調理|調攝|調養|護理|休養|康復|療養|看護|靜養|養傷|養病)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>調理</(ACTION_verb|VerbP)><IDIOM>[^<]*?</IDIOM>"
-        },
-        "增加自體防護力": {
-            "id": "234b1e7c-7a08-43ad-bc5e-100e566bf279",
-            "pos": "<ACTION_verb>增加</ACTION_verb><UserDefined>自體防護力</UserDefined>",
-            "lexy": [
-                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增加|加劇|加大|加強|加添|加重|增多|增大|增強|增添|增補)</(ACTION_verb|VerbP)>"
-            ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(增加|加劇|加大|加強|加添|加重|增多|增大|增強|增添|增補)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>自體防護力</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>調理</(ACTION_verb|VerbP)><IDIOM>新陳代謝</IDIOM>"
         },
         "增加血管含氧量": {
             "id": "69df2b64-5a28-48b5-ae36-23d24532762f",
@@ -510,8 +489,8 @@
             ],
             "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(刺激|促進)</(ACTION_verb|VerbP)><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>膠原蛋白</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))><(ACTION_verb|VerbP)>(合成|增生)</(ACTION_verb|VerbP)>"
         },
-        "維持上皮組織機能\n": {
-            "id": "5847f388-ef31-4917-9996-63434b0138e2",
+        "維持上皮組織機能": {
+            "id": "dadf6748-94bb-40f1-8821-2714af5e654e",
             "pos": "<ACTION_verb>維持</ACTION_verb><RANGE_locality>上</RANGE_locality><ENTITY_oov>皮</ENTITY_oov><UserDefined>組織機能</UserDefined>",
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(維持|保持|持守|持續|維繫|維護|保住|保護|保養|養護|保有)</(ACTION_verb|VerbP)>"
@@ -533,7 +512,10 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|制約|制衡|壓制|壓抑|抑止|管制|節制|遏制|遏抑|阻抑)</(ACTION_verb|VerbP)>",
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(產生|出產|滋生|生出|生成|生產|產出|使得|創作|創收|創造)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|限制|防止|抑止|阻抑)</(ACTION_verb|VerbP)>(<(MODIFIER|ModifierP)>[^<]*?</(MODIFIER|ModifierP)>)?(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(ACTION_verb|VerbP)>產生</(ACTION_verb|VerbP)>(<FUNC_in(ner|ter)>[^<]*?</FUNC_in(ner|ter)>)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(黴菌|細菌|病菌)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+            "pattern": "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(抑制|限制|防止|抑止|阻抑)</(ACTION_verb|VerbP)>(.+)?<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>(黴菌|細菌|病菌)</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         }
-    }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
 }

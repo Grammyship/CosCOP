@@ -51,14 +51,14 @@
                             <hr/>
                             <h5 class="card-title">涉及醫療效能</h5>
                             <div class="alert alert-danger" role="alert" v-for="utterance in getMEDICALRules">
-                                <input v-model="utterance.utterance" class="utteranceBox"/>
+                                <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
                             <div class="alert alert-success" role="alert" v-if="getMEDICALRules.length == 0">
                                 通過檢測
                             </div>
                             <h5 class="card-title">不屬於化粧品效能之宣稱</h5>
                             <div class="alert alert-danger" role="alert" v-for="utterance in getOTHERRules">
-                                <input v-model="utterance.utterance" class="utteranceBox"/>
+                                <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
                             <div class="alert alert-success" role="alert" v-if="getOTHERRules.length == 0">
                                 通過檢測
@@ -71,7 +71,7 @@
                             <hr/>
                             <h5 class="card-title">涉及虛偽或誇大</h5>
                             <div class="alert alert-warning" role="alert" v-for="utterance in getEXAGGRules">
-                                <input v-model="utterance.utterance" class="utteranceBox"/>
+                                <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
                             <div class="alert alert-success" role="alert" v-if="getEXAGGRules.length == 0">
                                 通過檢測

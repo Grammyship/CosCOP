@@ -333,6 +333,6 @@ if __name__ == "__main__":
     # 測試其它句子
     filterLIST = []
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    execDICT = execLoki("修復肌膚。改善受損肌膚", filterLIST, splitLIST)
+    execDICT = execLoki("百分百安全", filterLIST, splitLIST)
     
     pprint(execDICT)

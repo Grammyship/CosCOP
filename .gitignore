@@ -2,3 +2,4 @@ log.txt
 tmp/*
 account.info
 __pycache__
+.vscode/*

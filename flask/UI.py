@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__)
@@ -9,6 +9,8 @@ def main():
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze():
+    content = request.data.decode('utf-8')
+    # result = Parsing(content)
     result = dict({"utterances":[
                         { 
                             "utterance": "經實驗證實",

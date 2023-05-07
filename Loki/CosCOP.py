@@ -291,6 +291,8 @@ def testIntent():
     print("")
 
 def CosCOP(content):
+    content = json.loads(content)
+    content = content["content"]
     filterLIST = []
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     
@@ -323,7 +325,9 @@ def CosCOP(content):
         "status": "3",
         "utterance": sentence
     })
-    
+    print("resultLIST")
+    print(resultLIST)
+    print("-"*50)
     return dict({"utterances": resultLIST})
 
 if __name__ == "__main__":

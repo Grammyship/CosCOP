@@ -7,3 +7,5 @@
 1. 上傳 /Loki/ref 中所有檔案至 https://api.droidtown.co/loki/
 2. 在 / 加入檔案 account.info 並填入 { "username": "", "loki_key":""}
 3. 執行 `python ./flask/UI.py` 啟動介面
+
+### 執行畫面

@@ -2,3 +2,4 @@ log.txt
 toolbox/__pycache__/*
 tmp/*
 account.info
+flask/__pycache__/app.cpython-310.pyc

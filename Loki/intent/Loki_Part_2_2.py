@@ -182,4 +182,11 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "防水":
         resultDICT["Part2"].append(inputSTR)
 
+    if utterance == "實驗證實":
+        resultDICT["Part2"].append(inputSTR)
+
+    if utterance == "百分百":
+        resultDICT["Part2"].append(inputSTR)
+
+
     return resultDICT

@@ -182,9 +182,9 @@ class LokiResult():
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
     resultDICT = {
-       "Part1": [],
-       "Part2": [],
-       "Part3": []
+       "Part1": [], # 涉及醫療效能 => hard
+       "Part2": [], # 涉及虛偽或誇大 => soft
+       "Part3": []  # 不屬於化妝品效能之宣稱 => hard
     }
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
@@ -290,6 +290,41 @@ def testIntent():
     testLoki(inputLIST, ['Part_3'])
     print("")
 
+def CosCOP(content):
+    filterLIST = []
+    splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
+    
+    execDICT = execLoki(content, filterLIST, splitLIST)
+
+    resultLIST = [
+        """
+        {
+            "status": "",       # STR: Part1, 2, 3
+            "utterance": ""     # STR: 原文內容
+        }
+        """
+    ]
+    
+    # 涉及醫療 => hard
+    for sentence in execDICT["Part1"]:
+        resultLIST.append({
+            "status": "1",
+            "utterance": sentence
+    })
+    # 涉及虛偽或誇大 => soft
+    for sentence in execDICT["Part2"]:
+        resultLIST.append({
+        "status": "2",
+        "utterance": sentence
+    })
+    # 不屬於化妝品效能之宣稱 => hard
+    for sentence in execDICT["Part3"]:
+        resultLIST.append({
+        "status": "3",
+        "utterance": sentence
+    })
+    
+    return dict({"utterances": resultLIST})
 
 if __name__ == "__main__":
     # 測試所有意圖
@@ -298,6 +333,6 @@ if __name__ == "__main__":
     # 測試其它句子
     filterLIST = []
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    resultDICT = execLoki("", filterLIST)
+    execDICT = execLoki("修復肌膚。改善受損肌膚", filterLIST, splitLIST)
     
-    pprint(resultDICT)
+    pprint(execDICT)

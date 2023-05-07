@@ -27,24 +27,24 @@ try:
 except Exception as e:
     print("[ERROR] userDefinedDICT => {}".format(str(e)))
 
-responseDICT = {}
-try:
-    responseDICT = json.load(open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "reply/reply_Part_3.json"), encoding="utf-8"))
-except Exception as e:
-    print("[ERROR] responseDICT => {}".format(str(e)))
+# responseDICT = {}
+# try:
+#     responseDICT = json.load(open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "reply/reply_Part_3.json"), encoding="utf-8"))
+# except Exception as e:
+#     print("[ERROR] responseDICT => {}".format(str(e)))
 
 # 將符合句型的參數列表印出。這是 debug 或是開發用的。
 def debugInfo(inputSTR, utterance):
     if DEBUG_Part_3:
         print("[Part_3] {} ===> {}".format(inputSTR, utterance))
 
-def getResponse(utterance, args):
-    resultSTR = ""
-    if utterance in responseDICT:
-        if len(responseDICT[utterance]):
-            resultSTR = sample(responseDICT[utterance], 1)[0].format(*args)
+# def getResponse(utterance, args):
+#     resultSTR = ""
+#     if utterance in responseDICT:
+#         if len(responseDICT[utterance]):
+#             resultSTR = sample(responseDICT[utterance], 1)[0].format(*args)
 
-    return resultSTR
+#     return resultSTR
 
 def getResult(inputSTR, utterance, args, resultDICT):
     debugInfo(inputSTR, utterance)

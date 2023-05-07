@@ -323,9 +323,6 @@ def CosCOP(content):
         "status": "3",
         "utterance": sentence
     })
-    print("resultLIST")
-    print(resultLIST)
-    print("-"*50)
     return dict({"utterances": resultLIST})
 
 if __name__ == "__main__":

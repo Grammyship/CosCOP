@@ -298,15 +298,13 @@ def CosCOP(content):
     
     execDICT = execLoki(content, filterLIST, splitLIST)
 
-    resultLIST = [
-        """
-        {
-            "status": "",       # STR: Part1, 2, 3
-            "utterance": ""     # STR: 原文內容
-        }
-        """
-    ]
-    
+    resultLIST = []
+    """
+    {
+        "status": "",       # STR: Part1, 2, 3
+        "utterance": ""     # STR: 原文內容
+    }
+    """
     # 涉及醫療 => hard
     for sentence in execDICT["Part1"]:
         resultLIST.append({

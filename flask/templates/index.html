@@ -11,31 +11,45 @@
                 background-color: rgba(255, 255, 255, 0);
                 border: 0;
             }
+            html{ 
+                height:90%; 
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                padding:0px;
+                margin:0px;
+                width:100%;
+                background-image: url({{url_for('static', filename='background.png')}});
+            }
+            body{ 
+                height:90%; 
+                opacity: 0.86;
+            }
         </style>
     </head>
     <body id="app">
         <!-- As a heading -->
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1" style="font-size: 200%;">CosCOP</span>
                 <p class="card-title">此標準參考 <a target="_blank" href="https://www.health.ntpc.gov.tw/archive/health_ntpc/6/file/%E8%A1%A81%E5%8C%96%E7%B2%A7%E5%93%81%E5%BE%97%E5%AE%A3%E7%A8%B1%E8%A9%9E%E5%8F%A5%E4%BE%8B%E7%A4%BA%E5%8F%8A%E4%B8%8D%E9%81%A9%E7%95%B6%E5%AE%A3%E7%A8%B1%E8%A9%9E%E5%8F%A5%E4%BE%8B%E7%A4%BA.pdf">105 年 9 月 6 日衛生福利部部授食字第 1051607584 號公告</a></p>
             </div>
         </nav>
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid" style="height: 100%;">
+            <div class="row" style="height: 120%; background-color: rgb(255, 255, 255);">
                 <div class="col col-lg-8">
                     <!--Card-->
-                    <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="card shadow-lg p-3 bg-body-tertiary rounded" style=" position:fixed;width:65%;height:90.5%">
                         <div class="card-body">
                             <h3 class="card-title">請輸入檢測文字</h3>
                             <!--Textarea -->
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="請輸入商品描述或是廣告文案" id="Textarea1" 
-                                    style="height: 547px;" value="經實驗證實，本生髮液可以刺激毛囊讓髮絲再次生長不易脫落，修復毛囊，告別禿頭。">
+                                <textarea class="form-control" placeholder="請輸入商品描述或是廣告文案" id="Textarea1"  v-model="textarea"
+                                    style="height: 780px">
                                 </textarea>
                                 <label for="Textarea1">商品描述</label>
                             </div>
-                            <div style="padding-top:10px" align="right">
+                            <div style="padding-top:15px" align="right">
                                 <a href="#" class="btn btn-primary" v-if="!busy" @click="analyze()">立即分析</a>
                                 <div class="spinner-border text-primary" role="status" v-if="busy">
                                     <span class="visually-hidden">Loading...</span>
@@ -46,6 +60,32 @@
                     </div> 
                 </div>
                 <div class="col col-lg-4">
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="height:82%">
+                                <div class="card-body">
+                                    <h4 class="card-title">好手氣</h4>
+                                    <hr/>
+                                    <h5 class="card-title">上網爬取隨機商品敘述</h5>
+                                    <div class="d-grid gap-2" style="padding-top:15px">
+                                        <a href="#" class="btn btn-primary" v-if="!busy_lot" @click="lottery()">Go</a>
+                                        <div class="spinner-border text-primary" role="status" v-if="busy_lot">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-6">
+                            <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="height:82%">
+                                <div class="card-body">
+                                    <h4 class="card-title">關於</h4>
+                                    <hr/>
+                                    <a href="https://github.com/Grammyship/CosCOP" class="card-title">CosCOP Github網頁</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                         <div class="card-body">
                             <h4 class="card-title">硬性規定</h4>
@@ -54,14 +94,20 @@
                             <div class="alert alert-danger" role="alert" v-for="utterance in getMEDICALRules">
                                 <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
-                            <div class="alert alert-success" role="alert" v-if="getMEDICALRules.length == 0">
+                            <div class="alert alert-warning" role="alert" v-if="wait_analyze">
+                                等待分析
+                            </div>
+                            <div class="alert alert-success" role="alert" v-if="!wait_analyze && getMEDICALRules.length == 0">
                                 通過檢測
                             </div>
                             <h5 class="card-title">不屬於化粧品效能之宣稱</h5>
                             <div class="alert alert-danger" role="alert" v-for="utterance in getOTHERRules">
                                 <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
-                            <div class="alert alert-success" role="alert" v-if="getOTHERRules.length == 0">
+                            <div class="alert alert-warning" role="alert" v-if="wait_analyze">
+                                等待分析
+                            </div>
+                            <div class="alert alert-success" role="alert" v-if="!wait_analyze && getOTHERRules.length == 0">
                                 通過檢測
                             </div>
                         </div>
@@ -74,7 +120,10 @@
                             <div class="alert alert-warning" role="alert" v-for="utterance in getEXAGGRules">
                                 <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                             </div>
-                            <div class="alert alert-success" role="alert" v-if="getEXAGGRules.length == 0">
+                            <div class="alert alert-warning" role="alert" v-if="wait_analyze">
+                                等待分析
+                            </div>
+                            <div class="alert alert-success" role="alert" v-if="!wait_analyze && getEXAGGRules.length == 0">
                                 通過檢測
                             </div>
                         </div>
@@ -90,6 +139,8 @@
             data() {
                 return {
                     busy: false,
+                    busy_lot: false,
+                    wait_analyze: false,
                     utterances:[
                         { 
                             utterance: "經實驗證實",
@@ -104,6 +155,25 @@
                             status: StatusEnum.RULE_OTHER,
                         },
                     ],
+                    prepareData:[],
+                    textarea:"經實驗證實，本生髮液可以刺激毛囊讓髮絲再次生長不易脫落，修復毛囊，告別禿頭。"
+                }
+            },
+            mounted() {
+                // load prepare data
+                fetch('./api/prepare')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    this.prepareData = data
+                    // shuffle
+                    this.prepareData.sort(() => Math.random() - 0.5)
+                })
+            },
+            watch: {
+                textarea: function (val) {
+                    this.utterances = [];
+                    this.wait_analyze = true;
                 }
             },
             computed: {
@@ -118,6 +188,14 @@
                 }
             },
             methods: {
+                lottery(){
+                    this.busy_lot = true
+                    setTimeout(() => {
+                        let prod = this.prepareData.pop();
+                        this.textarea = `${prod.content}\n\n\n[來源]:${prod.url}`
+                        this.busy_lot = false
+                    }, Math.random()*1000+500); 
+                },
                 getStatusEnum(Name) {
                     return StatusEnum[Name]
                 },
@@ -129,10 +207,11 @@
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            content: document.getElementById("Textarea1").value,
+                            content: this.textarea,
                         }),
                     }).then(response => response.json())
                     .then(data => {
+                        this.wait_analyze = false;
                         this.utterances = data.utterances
                         this.busy = false
                     })

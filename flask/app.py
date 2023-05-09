@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 import json
 import os, sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Loki')))
@@ -10,6 +10,10 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('index.html')
+
+@app.route('/api/prepare')
+def prepare():
+    return render_template('data.json')
 
 @app.route('/api/analyze', methods=['POST'])
 def analyze():

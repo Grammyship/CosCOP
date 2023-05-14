@@ -9,4 +9,4 @@
 3. 執行 `python ./flask/app.py` 啟動介面
 
 ### 執行畫面
-![](https://raw.githubusercontent.com/Grammyship/CosCOP/ac6be856336726c2ffc28917e148ed7a8624654d/images/demo1.png)
+![](https://raw.githubusercontent.com/Grammyship/CosCOP/main/images/demo1.png)

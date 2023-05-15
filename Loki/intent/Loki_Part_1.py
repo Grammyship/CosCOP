@@ -73,9 +73,12 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "增加血管含氧量":
         resultDICT["Part2"].append(inputSTR)
 
-    if utterance == "增強抵抗力":
+    if utterance == "增強抵抗力":       # soft
         resultDICT["Part2"].append(inputSTR)
 
+    if utterance == "增強肌膚的抵抗力": # 得宣稱詞彙
+        pass
+        
     if utterance == "增強淋巴引流":
         resultDICT["Part2"].append(inputSTR)
 

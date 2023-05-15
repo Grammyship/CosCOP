@@ -17,7 +17,8 @@
 from random import sample
 import json
 import os
-
+import re
+    
 DEBUG_Part_3 = True
 CHATBOT_MODE = False
 
@@ -75,8 +76,12 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "促進體內乳腺細胞活化":
         resultDICT["Part3"].append(inputSTR)
 
-    if utterance == "保養關節":
-        resultDICT["Part3"].append(inputSTR)
+    if utterance == "保養關節":     # 「保養」後面不能接器官
+        for word in userDefinedDICT["_organ"]:
+            text = "保養^(" + word + ")" + word
+            if re.search(text, inputSTR):
+                resultDICT["Part3"].append(inputSTR)
+                break
 
     if utterance == "修補傷口":
         resultDICT["Part3"].append(inputSTR)
@@ -168,7 +173,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "消除已形成之黑斑":
         resultDICT["Part3"].append(inputSTR)
 
-    if utterance == "消除皮屑芽孢菌":
+    if utterance == "消除皮屑芽孢菌":   # 結尾需要是「菌」
         resultDICT["Part3"].append(inputSTR)
 
     if utterance == "淨身":
@@ -217,7 +222,9 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["Part3"].append(inputSTR)
 
     if utterance == "費洛蒙":
-        resultDICT["Part3"].append(inputSTR)
+        for word in userDefinedDICT["_medicalNoun"]:
+            if word in inputSTR:
+                resultDICT["Part3"].append(inputSTR)
 
     if utterance == "進行脂肪的分解":
         resultDICT["Part3"].append(inputSTR)

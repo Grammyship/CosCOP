@@ -78,7 +78,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "保養關節":     # 「保養」後面不能接器官
         for word in userDefinedDICT["_organ"]:
-            text = "保養^(" + word + ")" + word
+            text = "保養[^(" + word + ")]?" + word
             if re.search(text, inputSTR):
                 resultDICT["Part3"].append(inputSTR)
                 break
@@ -222,6 +222,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["Part3"].append(inputSTR)
 
     if utterance == "費洛蒙":
+        # print(args)
         for word in userDefinedDICT["_medicalNoun"]:
             if word in inputSTR:
                 resultDICT["Part3"].append(inputSTR)

@@ -44,7 +44,7 @@
                                 <!--Textarea -->
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="請輸入商品描述或是廣告文案" 
-                                    id="Textarea1"  v-model="textarea" style="resize: none;height: 43rem;">
+                                    id="Textarea1"  v-model="textarea" style="resize: none;height: 43rem; font-size: 150%;">
                                     </textarea>
                                     <label for="Textarea1">商品描述</label>
                                 </div>
@@ -195,7 +195,7 @@
                     document.getElementById("logger").innerHTML = "<span>開始爬取資料<span>"
                     setTimeout(() => {
                         let prod = this.prepareData.pop();
-                        document.getElementById("logger").innerHTML = `<a href='${prod.url}'>資料來源</a>`
+                        document.getElementById("logger").innerHTML = `產品資料來源:<a href='${prod.url}'>${prod.url.slice(0,40)}${prod.url.length>40?"...":""}</a>`
                         this.textarea = `${prod.content}`
                         this.busy_lot = false
                         if(!this.prepareData || this.prepareData.length < 3){

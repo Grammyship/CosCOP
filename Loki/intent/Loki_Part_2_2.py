@@ -77,9 +77,9 @@ def getResult(inputSTR, utterance, args, resultDICT):
 
     if utterance == "任何":
         addBool = True
+        # 下列的字可以接在"任何"的後面
         for word in ["問題", "商品", "仿品", "產品"]:
             text = "任何[^(" + word + ")]?" + word
-            print(text)
             if re.search(text, inputSTR):
                 addBool = False
                 break

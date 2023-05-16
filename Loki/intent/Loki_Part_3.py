@@ -222,10 +222,8 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["Part3"].append(inputSTR)
 
     if utterance == "費洛蒙":
-        # print(args)
-        for word in userDefinedDICT["_medicalNoun"]:
-            if word in inputSTR:
-                resultDICT["Part3"].append(inputSTR)
+        if args[0] in userDefinedDICT["_medicalNoun"]:
+            resultDICT["Part3"].append(inputSTR)
 
     if utterance == "進行脂肪的分解":
         resultDICT["Part3"].append(inputSTR)

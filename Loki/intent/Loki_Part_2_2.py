@@ -17,6 +17,7 @@
 from random import sample
 import json
 import os
+import re
 
 DEBUG_Part_2_2 = True
 CHATBOT_MODE = False
@@ -75,7 +76,15 @@ def getResult(inputSTR, utterance, args, resultDICT):
         resultDICT["Part2"].append(inputSTR)
 
     if utterance == "任何":
-        resultDICT["Part2"].append(inputSTR)
+        addBool = True
+        # 下列的字可以接在"任何"的後面
+        for word in ["問題", "商品", "仿品", "產品"]:
+            text = "任何[^(" + word + ")]?" + word
+            if re.search(text, inputSTR):
+                addBool = False
+                break
+        if addBool:
+            resultDICT["Part2"].append(inputSTR)
 
     if utterance == "任何使用方法皆很安全":
         resultDICT["Part2"].append(inputSTR)
@@ -188,5 +197,10 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "百分百":
         resultDICT["Part2"].append(inputSTR)
 
+    if utterance == "敏感人也適用":
+        resultDICT["Part2"].append(inputSTR)
+
+    if utterance == "易過敏體質也適用":
+        resultDICT["Part2"].append(inputSTR)
 
     return resultDICT

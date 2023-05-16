@@ -48,26 +48,32 @@ import math
 import re
 import os
 import json
+from ArticutAPI import Articut
 from pprint import pprint
 try:
     from intent import Loki_Part_1
     from intent import Loki_Part_2_2
     from intent import Loki_Part_3
+    from intent.Loki_Part_1 import userDefinedDICT
 except:
     from .intent import Loki_Part_1
     from .intent import Loki_Part_2_2
     from .intent import Loki_Part_3
-
+    from .intent.Loki_Part_1 import userDefinedDICT
+    
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ARTICUT_URL = "https://api.droidtown.co/Articut/API/"
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
     infoPath = "{}/account.info".format(BASE_PATH)
     infoDICT = json.load(open(infoPath, "r"))
     USERNAME = infoDICT["username"]
     LOKI_KEY = infoDICT["loki_key"]
+    ARTICUT_KEY = infoDICT["articut_key"]
 except:
     USERNAME = ""
     LOKI_KEY = ""
+    ARTICUT_KEY = ""
     
 # 意圖過濾器說明
 # INTENT_FILTER = []        => 比對全部的意圖 (預設)
@@ -179,6 +185,33 @@ class LokiResult():
             rst = lokiResultDICT["argument"]
         return rst
 
+
+def GetAdvArgs(inputSTR, rePAT):
+    # 把對應的 regex 先編譯
+    pat = re.compile(rePAT)
+
+    # 將輸入丟進 articut 斷詞
+    articut = Articut(USERNAME, ARTICUT_KEY, level="lv2")
+    articutResultDICT = articut.parse(inputSTR, userDefinedDictFILE=r"{}\\Loki\\intent\\USER_DEFINED.json".format(BASE_PATH))
+
+    posSTR = ""
+    for objLIST in articutResultDICT["result_obj"]:
+        for obj in objLIST:
+            if obj["pos"] == "PUNCTUATION":
+                continue
+            posSTR += "<{0}>{1}</{0}>".format(obj["pos"], obj["text"])
+
+    patGroups = re.findall(pat, posSTR)
+    if patGroups:
+        argsLIST = patGroups[0] #只取第一個
+        if type(argsLIST) == str: #檢查型態，根據不同的型態，都轉成list
+            rst = [argsLIST]
+        else:
+            rst = list(argsLIST)
+
+    return rst
+
+
 def runLoki(inputLIST, filterLIST=[]):
     # 將 intent 會使用到的 key 預先設爲空列表
     resultDICT = {
@@ -189,18 +222,19 @@ def runLoki(inputLIST, filterLIST=[]):
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
+    
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
                 # Part_1
                 if lokiRst.getIntent(index, resultIndex) == "Part_1":
-                    resultDICT = Loki_Part_1.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_Part_1.getResult(key, lokiRst.getUtterance(index, resultIndex), GetAdvArgs(key, lokiRst.getPattern(index, resultIndex)), resultDICT)
 
                 # Part_2_2
                 if lokiRst.getIntent(index, resultIndex) == "Part_2_2":
-                    resultDICT = Loki_Part_2_2.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_Part_2_2.getResult(key, lokiRst.getUtterance(index, resultIndex), GetAdvArgs(key, lokiRst.getPattern(index, resultIndex)), resultDICT)
 
                 # Part_3
                 if lokiRst.getIntent(index, resultIndex) == "Part_3":
-                    resultDICT = Loki_Part_3.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    resultDICT = Loki_Part_3.getResult(key, lokiRst.getUtterance(index, resultIndex), GetAdvArgs(key, lokiRst.getPattern(index, resultIndex)), resultDICT)
 
     else:
         resultDICT = {"msg": lokiRst.getMessage()}
@@ -332,6 +366,6 @@ if __name__ == "__main__":
     # 測試其它句子
     filterLIST = []
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
-    execDICT = execLoki("百分百安全", filterLIST, splitLIST)
+    execDICT = execLoki("商品有任何問題都可以來電詢問", filterLIST, splitLIST)
     
     pprint(execDICT)

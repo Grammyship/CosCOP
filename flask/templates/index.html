@@ -195,7 +195,7 @@
                     document.getElementById("logger").innerHTML = "<span>開始爬取資料<span>"
                     setTimeout(() => {
                         let prod = this.prepareData.pop();
-                        document.getElementById("logger").innerHTML = `產品資料來源:<a href='${prod.url}'>${prod.url.slice(0,40)}${prod.url.length>40?"...":""}</a>`
+                        document.getElementById("logger").innerHTML = `產品資料來源：<a href='${prod.url}'>${prod.url.slice(0,40)}${prod.url.length>40?"...":""}</a>`
                         this.textarea = `${prod.content}`
                         this.busy_lot = false
                         if(!this.prepareData || this.prepareData.length < 3){

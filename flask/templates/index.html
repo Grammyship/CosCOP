@@ -19,111 +19,124 @@
                 padding:0px;
                 margin:0px;
                 width:100%;
-                height: 100%;
                 background-image: url("https://raw.githubusercontent.com/Grammyship/CosCOP/main/flask/static/background.png");
             }
             body{ 
                 height:90%; 
-                opacity: 0.84;
+                opacity: 0.9;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            .spinner-container {
+                text-align: center;
             }
         </style>
     </head>
     <body id="app">
         <!-- As a heading -->
-        <div class="container-fluid" style="height: 125%; position:absolute;top:10px;">
-            <div class="row" style="height: 110%; background-color: rgb(255, 255, 255);">
+        <div class="overlay" v-if="busy_lot || busy">
+            <div class="spinner-container">
+              <div class="spinner-grow text-primary" role="status" style="width: 5rem; height: 5rem;">
+                <span class="visually-hidden" >Loading...</span>
+              </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="position:absolute;top:10px;">
+            <div class="row" style="background-color: rgb(255, 255, 255);">
                 <div class="col col-lg-8">
                     <!--Card-->
                     <div style="position:fixed;">
                         <div class="container-fluid">
-                            <span class="navbar-brand mb-0 h1" style="font-size: 200%;">CosCOP</span>
+                            <span class="navbar-brand mb-0 h1" style="font-size: 500%;">CosCOP</span>
                         </div>
-                        <div class="card shadow-lg p-3 bg-body-tertiary rounded" style=" position:fixed;width:65%;height:92%">
+                        <div class="card shadow-lg p-3 bg-body-tertiary rounded" style=" position:fixed;width:65%;">
                             <div class="card-body">
-                                <h3 class="card-title">請輸入檢測文字</h3>
+                                <h3 class="card-title" style="font-size: 300%;">請輸入檢測文字</h3>
                                 <!--Textarea -->
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="請輸入商品描述或是廣告文案" 
-                                    id="Textarea1"  v-model="textarea" style="resize: none;height: 43rem; font-size: 120%;">
+                                    id="Textarea1"  v-model="textarea" style="resize: none;font-size: 300%;height:40rem">
                                     </textarea>
-                                    <label for="Textarea1">商品描述</label>
+                                    <label for="Textarea1" style="font-size: 130%;">商品描述</label>
                                 </div>
-                                <div style="padding-top:15px" align="right">
-                                    <a href="#" class="btn btn-primary" v-if="!busy" @click="analyze()">立即分析</a>
-                                    <div class="spinner-border text-primary" role="status" v-if="busy">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </div>
-                                
+                                <div style="padding-top:15px;width:100%">
+                                    <a href="#" class="btn btn-primary" :disabled="!busy" @click="analyze()" style="font-size: 300%;width:100%">立即分析</a>
+                                </div> 
                             </div>
                         </div> 
                     </div>
                 </div>
-                <div class="col col-lg-4" >
-                    <div style="margin-top:37px">
+                <div class="col col-lg-4">
+                    <div style="margin-top:95px">
                         <div class="row">
                             <div class="col col-lg-12">
-                                <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="height:82%">
+                                <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                                     <div class="card-body">
-                                        <h4 class="card-title">CosCOP作品介紹 <a href="https://github.com/Grammyship/CosCOP">
+                                        <h4 class="card-title" style="font-size: 250%;">CosCOP作品介紹 <a href="https://github.com/Grammyship/CosCOP">
                                             <image src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" width="52" height="13" > </image>
                                         </a></h4>
                                         <hr/>
-                                        <p>本作品是基於句法分析，比對化妝品商品敘述是否含有不恰當、甚至是違反法規的文字。</p>
-                                        <span class="card-title">標準參考 
+                                        <p style="font-size: 200%;">本作品是基於句法分析，比對化妝品商品敘述是否含有不恰當、甚至是違反法規的文字。</p>
+                                        <span class="card-title" style="font-size: 180%;">標準參考 
                                             <a target="_blank" href="https://www.health.ntpc.gov.tw/archive/health_ntpc/6/file/%E8%A1%A81%E5%8C%96%E7%B2%A7%E5%93%81%E5%BE%97%E5%AE%A3%E7%A8%B1%E8%A9%9E%E5%8F%A5%E4%BE%8B%E7%A4%BA%E5%8F%8A%E4%B8%8D%E9%81%A9%E7%95%B6%E5%AE%A3%E7%A8%B1%E8%A9%9E%E5%8F%A5%E4%BE%8B%E7%A4%BA.pdf">105 年 9 月 6 日衛生福利部部授食字第 1051607584 號公告</a>
                                         </span>
-                                        
                                         <hr/>
-                                        <span id="logger"></span>
-                                        <div class="d-grid gap-2" style="padding-top:15px">
-                                            <a href="#" class="btn btn-primary" v-if="!busy_lot" @click="lottery()">立即試試!</a>
-                                            <div class="spinner-border text-primary" role="status" v-if="busy_lot">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
+                                        <span id="logger" style="font-size: 200%;"></span>
+                                        <div class="d-grid gap-2">
+                                            <a href="#" class="btn btn-primary" :disabled="!busy_lot" @click="lottery()" style="font-size: 200%;">立即試試!</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin-top:8px" id="hardRules">
+                        <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin-top:0px;" id="hardRules">
                             <div class="card-body">
-                                <h4 class="card-title">硬性規定</h4>
+                                <h1 class="card-title">硬性規定</h1>
                                 <hr/>
-                                <h5 class="card-title">涉及醫療效能</h5>
-                                <div class="alert alert-danger" role="alert" v-for="utterance in getMEDICALRules" style="font-size: 110%;">
+                                <h2 class="card-title">涉及醫療效能</h2>
+                                <div class="alert alert-danger" role="alert" v-for="utterance in getMEDICALRules" style="font-size: 200%;">
                                     <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                                 </div>
-                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 110%;">
+                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 200%;">
                                     等待分析
                                 </div>
-                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getMEDICALRules.length == 0" style="font-size: 110%;">
+                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getMEDICALRules.length == 0" style="font-size: 200%;">
                                     通過檢測
                                 </div>
-                                <h5 class="card-title">不屬於化粧品效能之宣稱</h5>
-                                <div class="alert alert-danger" role="alert" v-for="utterance in getOTHERRules" style="font-size: 110%;">
+                                <h2 class="card-title">不屬於化粧品效能之宣稱</h2>
+                                <div class="alert alert-danger" role="alert" v-for="utterance in getOTHERRules" style="font-size: 200%;">
                                     <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                                 </div>
-                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 110%;">
+                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 200%;">
                                     等待分析
                                 </div>
-                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getOTHERRules.length == 0" style="font-size: 110%;">
+                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getOTHERRules.length == 0" style="font-size: 200%;">
                                     通過檢測
                                 </div>
                             </div>
                         </div>
                         <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded">
                             <div class="card-body">
-                                <h4 class="card-title">軟性規定</h4>
+                                <h1 class="card-title">軟性規定</h1>
                                 <hr/>
-                                <h5 class="card-title">涉及虛偽或誇大</h5>
-                                <div class="alert alert-warning" role="alert" v-for="utterance in getEXAGGRules" style="font-size: 110%;">
+                                <h2 class="card-title">涉及虛偽或誇大</h2>
+                                <div class="alert alert-warning" role="alert" v-for="utterance in getEXAGGRules" style="font-size: 200%;">
                                     <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                                 </div>
-                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 110%;">
+                                <div class="alert alert-warning" role="alert" v-if="wait_analyze" style="font-size: 200%;">
                                     等待分析
                                 </div>
-                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getEXAGGRules.length == 0" style="font-size: 110%;">
+                                <div class="alert alert-success" role="alert" v-if="!wait_analyze && getEXAGGRules.length == 0" style="font-size: 200%;">
                                     通過檢測
                                 </div>
                             </div>
@@ -222,7 +235,7 @@
                         this.wait_analyze = false;
                         this.utterances = data.utterances
                         this.busy = false
-                        var scrollDiv = document.getElementById("hardRules").offsetTop;
+                        var scrollDiv = document.getElementById("hardRules").offsetTop - 95;
                         window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
                         this.busy = false
                     })

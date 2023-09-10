@@ -193,4 +193,7 @@ def getResult(inputSTR, utterance, args, resultDICT):
     if utterance == "頭頂不再光禿禿":
         resultDICT["Part2"].append(inputSTR)
 
+    if utterance == "杜絕敏感性牙齒的疼痛":
+        resultDICT["Part1"].append(inputSTR)
+
     return resultDICT

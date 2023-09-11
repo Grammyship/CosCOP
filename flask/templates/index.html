@@ -86,7 +86,7 @@
                                             <image src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" width="52" height="13" > </image>
                                         </a></h4>
                                         <hr/>
-                                        <p style="font-size: 200%;">本作品是基於句法分析，比對化妝品商品敘述是否含有不恰當、甚至是違反法規的文字。</p>
+                                        <p style="font-size: 200%;">本作品是基於樣態分析，比對藥粧品商品敘述是否含有不恰當、甚至是違反法規的文字。</p>
                                         <span class="card-title" style="font-size: 180%;">標準參考 
                                             <a target="_blank" href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=L0030099">108年6月4日衛授食字第1081201387號令</a>
                                         </span>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="card shadow-lg p-3 mb-5 bg-body-tertiary rounded" style="margin-top:0px;" id="hardRules">
                             <div class="card-body">
-                                <h1 class="card-title">硬性規定</h1>
+                                <h1 class="card-title">違規判定</h1>
                                 <hr/>
                                 <h2 class="card-title">涉及醫療效能</h2>
                                 <div class="alert alert-danger" role="alert" v-for="utterance in getMEDICALRules" style="font-size: 200%;">
@@ -113,7 +113,7 @@
                                 <div class="alert alert-success" role="alert" v-if="!wait_analyze && getMEDICALRules.length == 0" style="font-size: 200%;">
                                     通過檢測
                                 </div>
-                                <h2 class="card-title">不屬於化粧品效能之宣稱</h2>
+                                <h2 class="card-title">不屬於藥粧品效能之宣稱</h2>
                                 <div class="alert alert-danger" role="alert" v-for="utterance in getOTHERRules" style="font-size: 200%;">
                                     <input v-model="utterance.utterance" class="utteranceBox" disabled/>
                                 </div>
